@@ -1,0 +1,27 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Ada Studio"
+      }
+    },
+    "abort": {
+      "single_instance_allowed": "Ada Studio is already added."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Ada Studio",
+        "data": {
+          "folder": "Projects folder",
+          "sidebar_title": "Sidebar title",
+          "sidebar_icon": "Sidebar icon"
+        }
+      }
+    },
+    "error": {
+      "bad_folder": "Use a folder inside the configuration folder, such as www/ada_studio."
+    }
+  }
+}
