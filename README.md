@@ -63,13 +63,13 @@ Styles are listed with how many objects use them, grouped as you like, and previ
 
 ### See the logic as flows
 
-**Flows** turns the whole project into a readable graph: causes on the left (entities, sun, taps), the objects they drive in the middle, the effects on the right. Pick a cause to follow its chain, drag a cause onto an object to create a rule, and jump to any group from the list.
+**Flows** turns the whole project into a readable graph: causes on the left (entities, sun, taps), the objects they drive in the middle, the effects on the right. Pick a cause to follow its chain, open any node to edit it, and jump to any group from the list.
 
 ![Flows: causes, objects and effects of the "Casa" group](images/flows.jpg)
 
 ### Test before you publish
 
-**Test** shows every cause of the project in a side bar: flip a light, move a value or change the time of day, and the canvas reacts exactly as the dashboard will, without touching your devices.
+**Test** shows every cause of the project in a side bar: flip a light, move a value or change the time of day, and the canvas reacts exactly as the dashboard will, without touching your devices. Drag a cause onto an object to start a new rule.
 
 ![Test: causes on the left, the canvas reacting to them](images/test.jpg)
 
@@ -126,6 +126,8 @@ To change where projects are stored, or the sidebar title and icon, select **Con
 5. Choose *Create dashboard* from the title menu. Ada Studio writes the files, adds a dashboard named after the project to the sidebar, with a full-screen **Panel** view showing your picture, and opens it. If the dashboard already exists, it just opens it.
 
 From then on, *Update dashboard* followed by a reload is all it takes to publish your changes. When you delete a project, Ada Studio asks whether to delete its dashboard too.
+
+**Guides:** [Your first project](docs/guide/first-project.md) · [Rules, styles and Motion](docs/guide/rules-styles-motion.md) · [Flows, Test and pages](docs/guide/flows-test-pages.md)
 
 <details>
 <summary>Prefer to place the card yourself?</summary>
