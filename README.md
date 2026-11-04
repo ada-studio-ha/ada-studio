@@ -147,6 +147,6 @@ Set that view to **Panel** so the picture fills the screen.
 
 ## License
 
-Ada Studio is released under the [PolyForm Shield License 1.0.0](LICENSE): you can use, modify and share it, also for work, but not to build a product or service that competes with Ada Studio.
+Copyright © 2026 Antonio Arnone. Ada Studio is free software, released under the [GNU Affero General Public License v3.0](LICENSE): you can use, modify and share it, also for work; if you distribute a modified version, or offer it as a network service, you must release its source code under the same license.
 
 <sub>Animations: real dashboards made with Ada Studio. Screenshots: the Home Assistant dark theme, with a demo project. Camera cards are shown as placeholders.</sub>
