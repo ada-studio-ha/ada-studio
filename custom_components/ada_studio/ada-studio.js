@@ -1,4 +1,4 @@
-const MODULE_VERSION = '1.0.0-beta.1';
+const MODULE_VERSION = '1.0.0-beta.2';
 const BLENDS = ['normal','lighten','screen','plus-lighter','overlay','soft-light','hard-light','multiply','difference'];
 const ALIGNS = [
   ['start','Align left','M3,3H21V5H3V3M3,7H15V9H3V7M3,11H21V13H3V11M3,15H15V17H3V15M3,19H21V21H3V19Z'],
@@ -7103,6 +7103,7 @@ class AdaStudio extends HTMLElement {
         if(!o){
           const fo=document.createElementNS(SVGNS,'foreignObject'),box=document.createElement('div'),sb=document.createElement('div');
           box.className='cdb';sb.className='cds';box.appendChild(sb);fo.appendChild(box);
+          box.inert=true;
           o={fo:fo,box:box,sb:sb,el:null,key:'',tr:'',og:'',cl:'',sig:'',sk:[]};cdN.set(s.id,o);
         }
         if(G.children[i]!==o.fo)G.insertBefore(o.fo,G.children[i]||null);

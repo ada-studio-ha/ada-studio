@@ -98,22 +98,28 @@ On your dashboard, [ha-floorplan](https://github.com/ExperienceLovelace/ha-floor
 
 ## Installation
 
-> Ada Studio is in **beta**. Please report bugs and feedback in the [issues](https://github.com/ada-studio-ha/ada-studio/issues).
+> Ada Studio is in **beta**. Please report bugs and ideas in the [issues](https://github.com/ada-studio-ha/ada-studio/issues), or write to [antartix26@gmail.com](mailto:antartix26@gmail.com).
 
 **Requirements**
 
 - Home Assistant (current stable release)
-- [ha-floorplan](https://github.com/ExperienceLovelace/ha-floorplan), installed from HACS
+- [ha-floorplan](https://github.com/ExperienceLovelace/ha-floorplan), installed from the Marketplace
 - an administrator account (the panel and all its commands are admin-only)
 
-**Install**
+**Install from the Marketplace** (recommended)
 
-Download the [latest release](https://github.com/ada-studio-ha/ada-studio/releases) and copy its `custom_components/ada_studio/` folder into your `config/custom_components/`.
+1. Go to **Settings → Marketplace** and select **Add from link**.
+2. Enter `ada-studio-ha/ada-studio` and select **Add**. The first time, the Marketplace asks you to connect a (free) GitHub account: open the GitHub link in another tab, so the code stays on screen.
+3. Select **Ada Studio** in the list, then **Install**.
+4. The setup opens by itself: select **Submit**. **Ada Studio** appears in the sidebar.
 
-**Then**
+New releases then appear in **Settings → Updates**.
 
-1. Restart Home Assistant.
-2. Go to **Settings → Devices & services → Add integration**, search for **Ada Studio** and select **Submit**. **Ada Studio** appears in the sidebar.
+**Or install manually**
+
+1. Download the [latest release](https://github.com/ada-studio-ha/ada-studio/releases) and copy its `custom_components/ada_studio/` folder into your `config/custom_components/`.
+2. Restart Home Assistant.
+3. Go to **Settings → Devices & services → Add integration**, search for **Ada Studio** and select **Submit**. **Ada Studio** appears in the sidebar.
 
 To change where projects are stored, or the sidebar title and icon, select **Configure** on the Ada Studio integration.
 
@@ -142,6 +148,13 @@ config: /local/ada_studio/<project>/panel-config.yaml
 
 Set that view to **Panel** so the picture fills the screen.
 </details>
+
+---
+
+## Feedback and contact
+
+- **Bugs and ideas**: open an [issue](https://github.com/ada-studio-ha/ada-studio/issues/new/choose); the form asks for the versions that help find the problem.
+- **Anything else**, or what you prefer not to post publicly: [antartix26@gmail.com](mailto:antartix26@gmail.com).
 
 ---
 

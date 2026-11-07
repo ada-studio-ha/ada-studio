@@ -1,0 +1,57 @@
+name: Bug report
+description: Something in Ada Studio or in the exported dashboard does not work as expected
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What you did, what you expected, and what happened instead.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Open the project…
+        2. Select…
+        3. …
+  - type: input
+    id: ada
+    attributes:
+      label: Ada Studio version
+      description: Settings → Devices & services → Ada Studio, or the version in the manifest.
+      placeholder: 1.0.0-beta.2
+    validations:
+      required: true
+  - type: input
+    id: ha
+    attributes:
+      label: Home Assistant version
+      placeholder: "2026.11.0"
+    validations:
+      required: true
+  - type: input
+    id: floorplan
+    attributes:
+      label: ha-floorplan version
+      description: Only if the problem is on the dashboard.
+  - type: input
+    id: browser
+    attributes:
+      label: Browser and device
+      placeholder: Safari on iPad, Chrome on Windows, Home Assistant app on Android…
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Errors
+      description: Messages from the browser console or from the Home Assistant log, if any.
+      render: text
+  - type: textarea
+    id: more
+    attributes:
+      label: Screenshots or project
+      description: Drag images here. If you can, attach the project (Download file in the project menu) that shows the problem.
