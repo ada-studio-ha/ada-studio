@@ -116,6 +116,8 @@ On your dashboard, [ha-floorplan](https://github.com/ExperienceLovelace/ha-floor
 
 New releases then appear in **Settings → Updates**.
 
+On Home Assistant before 2026.11 the button opens **HACS**: select **Download**, restart Home Assistant, then add **Ada Studio** from **Settings → Devices & services → Add integration**.
+
 **Or install manually**
 
 1. Download the [latest release](https://github.com/ada-studio-ha/ada-studio/releases) and copy its `custom_components/ada_studio/` folder into your `config/custom_components/`.
