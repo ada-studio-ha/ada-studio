@@ -108,10 +108,11 @@ On your dashboard, [ha-floorplan](https://github.com/ExperienceLovelace/ha-floor
 
 **Install from the Marketplace** (recommended)
 
-1. Go to **Settings → Marketplace** and select **Add from link**.
-2. Enter `ada-studio-ha/ada-studio` and select **Add**. The first time, the Marketplace asks you to connect a (free) GitHub account: open the GitHub link in another tab, so the code stays on screen.
-3. Select **Ada Studio** in the list, then **Install**.
-4. The setup opens by itself: select **Submit**. **Ada Studio** appears in the sidebar.
+[![Open your Home Assistant instance and open Ada Studio in the Marketplace.](https://my.home-assistant.io/badges/marketplace_repository.svg)](https://my.home-assistant.io/redirect/marketplace_repository/?owner=ada-studio-ha&repository=ada-studio&category=integration)
+
+1. Select the button above. Or go to **Settings → Marketplace**, select **Add from link**, enter `ada-studio-ha/ada-studio` and select **Ada Studio** in the list. The first time, the Marketplace asks you to connect a (free) GitHub account: open the GitHub link in another tab, so the code stays on screen.
+2. Select **Install**.
+3. The setup opens by itself: select **Submit**. **Ada Studio** appears in the sidebar.
 
 New releases then appear in **Settings → Updates**.
 

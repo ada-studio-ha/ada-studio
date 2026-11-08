@@ -1,7 +1,9 @@
 {
   "domain": "ada_studio",
   "name": "Ada Studio",
-  "codeowners": [],
+  "codeowners": [
+    "@Antartix"
+  ],
   "config_flow": true,
   "dependencies": [
     "http",
