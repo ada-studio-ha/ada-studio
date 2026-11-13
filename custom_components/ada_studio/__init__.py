@@ -30,7 +30,7 @@ _LOGGER = logging.getLogger(__name__)
 
 DOMAIN = "ada_studio"
 STATIC_URL = "/ada_studio_static"
-MODULE_VERSION = "1.0.0-beta.2"
+MODULE_VERSION = "1.0.0-beta.3"
 
 DEFAULT_FOLDER = "www/ada_studio"
 DEFAULT_TITLE = "Ada Studio"

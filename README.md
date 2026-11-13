@@ -33,7 +33,7 @@ The typical use: a photo of the house with the lights off as the background, and
 - **Rules: When → Then → On.** Everything that changes at runtime is a rule: *when* some conditions are true (AND/OR), *then* apply a look, show a photo, write a value or play an animation, *on* these objects or groups. A rule can also make a photo follow a value, a label show a sensor reading, or an icon change.
 - **Tap actions.** Toggle an entity, open its *More info* dialog, call any service, go to another page, or apply a style locally. Zones can also let taps pass through to what is underneath.
 - **Animations.** Spin, pulse, blink, heartbeat, shake, bounce, fade or your own keyframes, dashes flowing along a line, and properties driven straight by an entity value (for example a gauge needle rotated by the setpoint).
-- **Pages.** One project can hold several pages (home, climate, lights, cameras…) sharing a background and common objects, with navigation between them.
+- **Pages and transitions.** One project can hold several pages (home, climate, lights, cameras…) sharing a background and common objects. Move between them with fade, slide, zoom, rotate or a 3D carousel that shows the neighbouring pages at the sides; slide, rotate and the carousel also follow your finger, and Home Assistant cards stay live during the move.
 - **Home Assistant cards on the canvas.** Place any Lovelace card, built-in or custom, on the picture, either from YAML or by picking it from an existing dashboard, and style it with the same rules.
 - **Flows: all the logic at a glance.** A node canvas lists every cause, the objects it drives and the effects, grouped the way your objects are grouped.
 - **Test.** Simulate entity values and the time of day to check how every rule reacts, without touching your devices.
@@ -78,6 +78,10 @@ Styles are listed with how many objects use them, grouped as you like, and previ
 Zones, labels, icons, animations and rules are enough to build complete control panels. This climate page has four thermostats, each with a needle that follows the setpoint, power and +/− buttons that call services, and live temperature and humidity.
 
 ![A climate page made only of zones, labels and rules](images/clima.jpg)
+
+Pages can also hold Home Assistant cards and turn like a carousel under your finger, with the neighbouring pages at the sides; the menu bar follows the page that is open.
+
+![Pages of Home Assistant cards turning like a carousel, with a menu bar that follows the open page](images/carosello.webp)
 
 ---
 

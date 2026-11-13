@@ -43,10 +43,12 @@ Simulated values are saved with the project but never written to the dashboard.
 One project can hold several pages (home, climate, lights, cameras…) sharing the same background and size.
 
 - **New page**: from the title menu the first time. Then the page name appears next to the project name, and its menu lists the pages, with **New page**, **Delete page…** and **Copy link**.
-- Select the page row (▭) in **Objects** to set its **name**, its **address** and its **entry** transition. The address is what comes after `#` in the dashboard URL (`/my-house/0#climate`), so a page can be opened directly or from another dashboard. Renaming a page does not change its address.
+- Select the page row (▭) in **Objects** to set its **name** and its **address**. The address is what comes after `#` in the dashboard URL (`/my-house/0#climate`), so a page can be opened directly or from another dashboard. Renaming a page does not change its address.
 - The page **size** is the same for all pages (**project** row → *page width*, *page height*). Each page has its own **x** and **y**, so it can show a different part of a large picture.
 - Each object belongs to a page or to **all pages** (*Settings* → **page**). Objects on *all pages* (a menu bar, a clock) are drawn on top of every page.
 - Move between pages with a tap rule and the **Go to page** action. The first page in the list is the one the dashboard opens.
+- **Transition**: one for the whole project, picked from the thumbnails in the **Project** panel: *fade*, *slide*, *zoom*, *rotate* or *carousel*. Its direction follows the page order: forward to a later page, back to an earlier one. **Options** sets the duration and, depending on the transition, the axis, the side bands, the gap and the depth of the carousel. With **swipe**, slide, rotate and the carousel also follow the finger, on the dashboard and in *Test*.
+- **Current page is …**: a cause that is true while that page is open. In a rule, **+ cause** → **current page**, then pick the page. Use it for objects on *all pages* that follow the page, such as the button of the current page in a menu: it works with taps, swipes, the carousel and page addresses alike. In *Test* its switch opens the page.
 
 In *Edit*, *Rules* and *Test* show the current page plus *all pages*.
 
