@@ -30,7 +30,9 @@ _LOGGER = logging.getLogger(__name__)
 
 DOMAIN = "ada_studio"
 STATIC_URL = "/ada_studio_static"
-MODULE_VERSION = "1.0.0-beta.3"
+EXAMPLES_DIR = "examples"
+EXAMPLES_URL = "/ada_studio_examples"
+MODULE_VERSION = "1.0.0-beta.4"
 
 DEFAULT_FOLDER = "www/ada_studio"
 DEFAULT_TITLE = "Ada Studio"
@@ -83,6 +85,11 @@ async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:
         await hass.http.async_register_static_paths(
             [StaticPathConfig(f"{STATIC_URL}/ada-studio.js", module_file, True)]
         )
+        examples = os.path.join(here, EXAMPLES_DIR)
+        if os.path.isdir(examples):
+            await hass.http.async_register_static_paths(
+                [StaticPathConfig(EXAMPLES_URL, examples, False)]
+            )
     except Exception:
         _LOGGER.exception("Static file registration failed")
         return False
@@ -277,6 +284,45 @@ def _list_projects(target):
             info["pv"] = 0
         out.append(info)
     return out
+
+
+def _examples_dir():
+    return os.path.join(os.path.dirname(__file__), EXAMPLES_DIR)
+
+
+def _list_examples():
+    base = _examples_dir()
+    return _list_projects(base) if os.path.isdir(base) else []
+
+
+def _copy_example(target, project, example, content):
+    src = _project_dir(_examples_dir(), example)
+    path = _project_dir(target, project)
+    if not project or not os.path.isfile(os.path.join(src, PROJECT_FILE)):
+        raise FileNotFoundError(example)
+    if os.path.exists(path):
+        raise FileExistsError(project)
+    base = os.path.realpath(src)
+    os.makedirs(path)
+    for sub in SUBDIRS:
+        os.makedirs(os.path.join(path, sub), exist_ok=True)
+    if content:
+        with open(os.path.join(path, PROJECT_FILE), "w", encoding="utf-8") as handle:
+            handle.write(content)
+    else:
+        shutil.copyfile(os.path.join(src, PROJECT_FILE), os.path.join(path, PROJECT_FILE))
+    one = os.path.join(src, PREVIEW_FILE)
+    if os.path.isfile(one) and _inside(base, one):
+        shutil.copyfile(one, os.path.join(path, PREVIEW_FILE))
+    for sub in SUBDIRS:
+        folder = os.path.join(src, sub)
+        if not os.path.isdir(folder) or not _inside(base, folder):
+            continue
+        for name in os.listdir(folder):
+            one = os.path.join(folder, name)
+            if os.path.isfile(one) and SAFE_NAME.match(name) and _inside(base, one):
+                shutil.copyfile(one, os.path.join(path, sub, name))
+    return project
 
 
 def _read_project(target, project):
@@ -839,7 +885,11 @@ async def ws_projects(hass: HomeAssistant, connection, msg) -> None:
         connection.send_error(msg["id"], "not_ready", "Integration not initialized")
         return
     projects = await hass.async_add_executor_job(_list_projects, target)
-    connection.send_result(msg["id"], {"projects": projects, "folder": target})
+    examples = await hass.async_add_executor_job(_list_examples)
+    connection.send_result(
+        msg["id"],
+        {"projects": projects, "folder": target, "examples": examples, "examples_url": EXAMPLES_URL},
+    )
 
 
 @websocket_api.require_admin
@@ -847,6 +897,7 @@ async def ws_projects(hass: HomeAssistant, connection, msg) -> None:
     {
         vol.Required("type"): "ada_studio/project_open",
         vol.Required("project"): cv.string,
+        vol.Optional("example", default=False): cv.boolean,
     }
 )
 @websocket_api.async_response
@@ -857,7 +908,7 @@ async def ws_project_open(hass: HomeAssistant, connection, msg) -> None:
         return
     try:
         content = await hass.async_add_executor_job(
-            _read_project, target, msg["project"]
+            _read_project, _examples_dir() if msg["example"] else target, msg["project"]
         )
     except ValueError as exc:
         connection.send_error(msg["id"], "invalid_path", str(exc))
@@ -878,6 +929,7 @@ async def ws_project_open(hass: HomeAssistant, connection, msg) -> None:
         vol.Required("project"): cv.string,
         vol.Optional("from"): vol.Any(cv.string, None),
         vol.Optional("content"): vol.Any(cv.string, None),
+        vol.Optional("example"): vol.Any(cv.string, None),
     }
 )
 @websocket_api.async_response
@@ -891,9 +943,14 @@ async def ws_project_new(hass: HomeAssistant, connection, msg) -> None:
         connection.send_error(msg["id"], "invalid_format", "Project too large")
         return
     try:
-        name = await hass.async_add_executor_job(
-            _new_project, target, msg["project"], msg.get("from"), content
-        )
+        if msg.get("example"):
+            name = await hass.async_add_executor_job(
+                _copy_example, target, msg["project"], msg["example"], msg.get("content")
+            )
+        else:
+            name = await hass.async_add_executor_job(
+                _new_project, target, msg["project"], msg.get("from"), content
+            )
     except ValueError as exc:
         connection.send_error(msg["id"], "invalid_path", str(exc))
         return

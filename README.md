@@ -4,84 +4,59 @@
 
 **Draw your Home Assistant dashboard instead of stacking cards.**
 
-Ada Studio is a Home Assistant integration that adds a graphical editor to the sidebar. You take a picture (a photo of your house, a floor plan, a render, any artwork), draw **free-form zones** on top of it, and decide how each zone looks and behaves as your entities change. Ada Studio then writes everything the [ha-floorplan](https://github.com/ExperienceLovelace/ha-floorplan) card needs to bring it to life on your dashboard.
-
-![A house in cross-section through a whole day: sky, sun and room lights follow the time](images/giornata.webp)
-
-<table>
-<tr>
-<td><img src="images/tende.webp" alt="Curtains that open and close with a slider"></td>
-<td><img src="images/tapparella.webp" alt="A roller shutter going up and down, with the room light changing"></td>
-</tr>
-<tr>
-<td align="center"><sub>Curtains following a slider</sub></td>
-<td align="center"><sub>A roller shutter and the light in the room</sub></td>
-</tr>
-</table>
+Ada Studio was born to make dashboards easier to create, to manage and to bring to life. It is a graphical editor in the Home Assistant sidebar: you start from any picture, draw zones on it, and decide how each one looks and moves as your entities change. No YAML to write, no CSS to learn: Ada Studio writes it all for you.
 
 ![A 3D floor plan with a page menu: moving between floors](images/pagine.webp)
 
-The typical use: a photo of the house with the lights off as the background, and for each room a zone that fades in the photo of the same room lit up when its light turns on, with an opacity that follows the brightness. From there you can go much further: thermostats, menus, multiple pages, Home Assistant cards placed anywhere on the picture.
+---
+
+## Your own graphics and Home Assistant cards, together
+
+Zones, photos and animations live side by side with the cards you already use. Any Lovelace card, built-in or custom, can sit anywhere on the picture, take the same styles and follow the same rules, and stays live while the pages turn.
+
+This dashboard is the example that comes with Ada Studio: six pages of Home Assistant cards on a drawn background, turning like a carousel under your finger, with a menu bar that follows the open page.
+
+![The example dashboard: pages of Home Assistant cards turning like a carousel](images/carosello.webp)
+
+## Open dashboards made by others
+
+A project can use **placeholder entities** instead of real ones: they behave like a light, a sensor or a thermostat, so the whole dashboard works in Ada Studio even in a house that does not have those devices. That is how the example above travels: open it from *Open project…*, try it in **Test**, then link each placeholder to one of your entities from the *Entities…* window, and the dashboard is yours.
+
+It also works the other way round: *Make placeholders* turns your entities into generic placeholders, so you can share a dashboard without sharing your home.
 
 ---
 
-## Highlights
+## Your first zone
 
-- **A real drawing tool, inside Home Assistant.** Polygons, curves, rectangles, circles, sectors, regular polygons, callouts, open lines with arrows, labels and Material Design icons. Rulers, guides, grid and snapping, groups, locks, undo/redo, multi-select, rotate and flip. It works with a mouse or a touchscreen (pinch to zoom, two fingers to pan), so you can also edit from a tablet.
-- **Photos per zone.** Each zone can show one or more photos clipped to its shape. A photo can be anchored to the canvas or follow the shape, and its opacity, blend mode and transition come from styles.
-- **Styles you reuse.** Solid colours, linear, radial and conic gradients, stripes and other patterns, tiled textures, strokes, glows, opacity and blend modes. Styles are named, grouped, previewed, and they can apply to a single object, a group or the whole canvas.
-- **Rules: When → Then → On.** Everything that changes at runtime is a rule: *when* some conditions are true (AND/OR), *then* apply a look, show a photo, write a value or play an animation, *on* these objects or groups. A rule can also make a photo follow a value, a label show a sensor reading, or an icon change.
-- **Tap actions.** Toggle an entity, open its *More info* dialog, call any service, go to another page, or apply a style locally. Zones can also let taps pass through to what is underneath.
-- **Animations.** Spin, pulse, blink, heartbeat, shake, bounce, fade or your own keyframes, dashes flowing along a line, and properties driven straight by an entity value (for example a gauge needle rotated by the setpoint).
-- **Pages and transitions.** One project can hold several pages (home, climate, lights, cameras…) sharing a background and common objects. Move between them with fade, slide, zoom, rotate or a 3D carousel that shows the neighbouring pages at the sides; slide, rotate and the carousel also follow your finger, and Home Assistant cards stay live during the move.
-- **Home Assistant cards on the canvas.** Place any Lovelace card, built-in or custom, on the picture, either from YAML or by picking it from an existing dashboard, and style it with the same rules.
-- **Flows: all the logic at a glance.** A node canvas lists every cause, the objects it drives and the effects, grouped the way your objects are grouped.
-- **Test.** Simulate entity values and the time of day to check how every rule reacts, without touching your devices.
-- **Projects live in your config folder.** Each project is a folder under `www/ada_studio/`, saved with conflict detection between devices, included in Home Assistant backups, and easy to copy or duplicate.
+### 1. Choose a picture
 
----
+Create a project, select **background** and pick an image from the project folder, from Home Assistant **Media**, or upload it from your device.
 
-## A tour
+![Choosing the background picture](images/zona-1-sfondo.jpg)
 
-### Draw and dress the zones
+### 2. Draw a zone
 
-Select a zone to edit its geometry (*Settings*), its photos and base look (*Look*) and the rules that act on it (*Behavior*). Here the bedroom zone holds two photos: the lit room by night and by day.
+Pick the polygon tool and click around the room; **Enter** closes the shape. Give it a name: names show up everywhere.
 
-![Editing a zone: the Look tab with two photos](images/editor.jpg)
+![A zone drawn around the kitchen](images/zona-2-disegno.jpg)
 
-### Give them a behaviour
+### 3. Give it a look
 
-The *Behavior* tab lists every rule that touches the selected object. The rule that is currently true is marked *active*. New rules start from **+ rule**, and *Replace entity…* swaps an entity across all the rules of a selection, which is handy after copying a room.
+In **Look**, add a photo of the same room with the light on, and a style for its base look: here *Light off*, which hides it.
 
-![The Behavior tab: rules on the selected zone](images/behavior.jpg)
+![The Look tab: the photo of the lit kitchen and the base look](images/zona-3-aspetto.jpg)
 
-### Build a style library
+### 4. Add a rule
 
-Styles are listed with how many objects use them, grouped as you like, and previewed live. The same style can be the base look of a zone or the effect of a rule.
+In **Behavior**, a rule reads **When → Then → On**: *when* the kitchen light is on, *then* apply the *Light on* look, *on* the kitchen.
 
-![The Styles tab with a stripe pattern being edited](images/styles.jpg)
+![The rule: when the kitchen light is on, the kitchen lights up](images/zona-4-regola.jpg)
 
-### See the logic as flows
+### 5. Try it
 
-**Flows** turns the whole project into a readable graph: causes on the left (entities, sun, taps), the objects they drive in the middle, the effects on the right. Pick a cause to follow its chain, open any node to edit it, and jump to any group from the list.
+In **Test** you switch the light from the side bar and the picture reacts exactly as the dashboard will, without touching your devices. Then *Create dashboard* in the title menu puts it in your sidebar.
 
-![Flows: causes, objects and effects of the "Casa" group](images/flows.jpg)
-
-### Test before you publish
-
-**Test** shows every cause of the project in a side bar: flip a light, move a value or change the time of day, and the canvas reacts exactly as the dashboard will, without touching your devices. Drag a cause onto an object to start a new rule.
-
-![Test: causes on the left, the canvas reacting to them](images/test.jpg)
-
-### Go beyond the floor plan
-
-Zones, labels, icons, animations and rules are enough to build complete control panels. This climate page has four thermostats, each with a needle that follows the setpoint, power and +/− buttons that call services, and live temperature and humidity.
-
-![A climate page made only of zones, labels and rules](images/clima.jpg)
-
-Pages can also hold Home Assistant cards and turn like a carousel under your finger, with the neighbouring pages at the sides; the menu bar follows the page that is open.
-
-![Pages of Home Assistant cards turning like a carousel, with a menu bar that follows the open page](images/carosello.webp)
+![Test: switching the kitchen light on and off](images/zona-5-test.webp)
 
 ---
 
@@ -130,16 +105,6 @@ On Home Assistant before 2026.11 the button opens **HACS**: select **Download**,
 
 To change where projects are stored, or the sidebar title and icon, select **Configure** on the Ada Studio integration.
 
-## Getting started
-
-1. Open **Ada Studio** from the sidebar and create a project from the title menu (*New project…*).
-2. Choose a background image: pick it from the project folder or upload it from your device.
-3. Draw your zones, labels and icons, then add styles, photos and rules.
-4. Check the result with **Test**.
-5. Choose *Create dashboard* from the title menu. Ada Studio writes the files, adds a dashboard named after the project to the sidebar, with a full-screen **Panel** view showing your picture, and opens it. If the dashboard already exists, it just opens it.
-
-From then on, *Update dashboard* followed by a reload is all it takes to publish your changes. When you delete a project, Ada Studio asks whether to delete its dashboard too.
-
 **Guides:** [Your first project](docs/guide/first-project.md) · [Rules, styles and Motion](docs/guide/rules-styles-motion.md) · [Flows, Test and pages](docs/guide/flows-test-pages.md)
 
 <details>
@@ -158,6 +123,14 @@ Set that view to **Panel** so the picture fills the screen.
 
 ---
 
+## Advanced examples
+
+A house in cross-section through a whole day: the sky, the sun and the lights of the rooms follow the time.
+
+![A house in cross-section through a whole day: sky, sun and room lights follow the time](images/giornata.webp)
+
+---
+
 ## Feedback and contact
 
 - **Bugs and ideas**: open an [issue](https://github.com/ada-studio-ha/ada-studio/issues/new/choose); the form asks for the versions that help find the problem.
@@ -169,4 +142,4 @@ Set that view to **Panel** so the picture fills the screen.
 
 Copyright © 2026 Antonio Arnone. Ada Studio is free software, released under the [GNU Affero General Public License v3.0](LICENSE): you can use, modify and share it, also for work; if you distribute a modified version, or offer it as a network service, you must release its source code under the same license.
 
-<sub>Animations: real dashboards made with Ada Studio. Screenshots: the Home Assistant dark theme, with a demo project. Camera cards are shown as placeholders.</sub>
+<sub>Animations: real dashboards made with Ada Studio. Screenshots: the Home Assistant dark theme, with a demo project.</sub>

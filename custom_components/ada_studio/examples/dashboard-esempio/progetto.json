@@ -1,0 +1,3929 @@
+{
+  "format": 2,
+  "w": 1280,
+  "h": 800,
+  "grid": 10,
+  "objects": [
+    {
+      "id": "o120",
+      "t": "rect",
+      "n": "Home panel",
+      "pg": "p1",
+      "sty": [
+        22
+      ],
+      "x": 140,
+      "y": 16,
+      "w": 1000,
+      "h": 648,
+      "r": 28
+    },
+    {
+      "id": "o121",
+      "t": "rect",
+      "n": "Lights panel",
+      "pg": "p2",
+      "sty": [
+        22
+      ],
+      "x": 140,
+      "y": 16,
+      "w": 1000,
+      "h": 648,
+      "r": 28
+    },
+    {
+      "id": "o122",
+      "t": "rect",
+      "n": "Climate panel",
+      "pg": "p3",
+      "sty": [
+        22
+      ],
+      "x": 140,
+      "y": 16,
+      "w": 1000,
+      "h": 648,
+      "r": 28
+    },
+    {
+      "id": "o123",
+      "t": "rect",
+      "n": "Security panel",
+      "pg": "p4",
+      "sty": [
+        22
+      ],
+      "x": 140,
+      "y": 16,
+      "w": 1000,
+      "h": 648,
+      "r": 28
+    },
+    {
+      "id": "o124",
+      "t": "rect",
+      "n": "Energy panel",
+      "pg": "p5",
+      "sty": [
+        22
+      ],
+      "x": 140,
+      "y": 16,
+      "w": 1000,
+      "h": 648,
+      "r": 28
+    },
+    {
+      "id": "o125",
+      "t": "rect",
+      "n": "Media panel",
+      "pg": "p6",
+      "sty": [
+        22
+      ],
+      "x": 140,
+      "y": 16,
+      "w": 1000,
+      "h": 648,
+      "r": 28
+    },
+    {
+      "id": "o1",
+      "t": "label",
+      "n": "Good evening title",
+      "x": 164,
+      "y": 68,
+      "size": 28,
+      "txt": "Good evening",
+      "sty": [
+        1
+      ],
+      "pg": "p1"
+    },
+    {
+      "id": "o2",
+      "t": "card",
+      "n": "Weather",
+      "x": 890,
+      "y": 40,
+      "w": 226,
+      "h": 56,
+      "cfg": {
+        "type": "tile",
+        "entity": "ada_studio.weather_1",
+        "name": "Weather"
+      },
+      "pg": "p1",
+      "yaml": "type: \"tile\"\nentity: \"ada_studio.weather_1\"\nname: \"Weather\"\n"
+    },
+    {
+      "id": "o3",
+      "t": "label",
+      "n": "Today section",
+      "x": 164,
+      "y": 108,
+      "size": 18,
+      "txt": "Today",
+      "sty": [
+        2
+      ],
+      "pg": "p1"
+    },
+    {
+      "id": "o4",
+      "t": "card",
+      "n": "Forecast",
+      "x": 164,
+      "y": 128,
+      "w": 226,
+      "h": 196,
+      "cfg": {
+        "type": "weather-forecast",
+        "entity": "ada_studio.weather_1",
+        "forecast_type": "daily",
+        "show_current": true,
+        "show_forecast": true
+      },
+      "pg": "p1",
+      "yaml": "type: \"weather-forecast\"\nentity: \"ada_studio.weather_1\"\nforecast_type: \"daily\"\nshow_current: true\nshow_forecast: true\n"
+    },
+    {
+      "id": "o5",
+      "t": "card",
+      "n": "Person",
+      "x": 164,
+      "y": 332,
+      "w": 226,
+      "h": 56,
+      "cfg": {
+        "type": "tile",
+        "entity": "ada_studio.person_1",
+        "name": "Person"
+      },
+      "pg": "p1",
+      "yaml": "type: \"tile\"\nentity: \"ada_studio.person_1\"\nname: \"Person\"\n"
+    },
+    {
+      "id": "o6",
+      "t": "card",
+      "n": "Washer",
+      "x": 164,
+      "y": 396,
+      "w": 226,
+      "h": 56,
+      "cfg": {
+        "type": "tile",
+        "entity": "ada_studio.sensor_washing_machine_end_1",
+        "name": "Washer"
+      },
+      "pg": "p1",
+      "yaml": "type: \"tile\"\nentity: \"ada_studio.sensor_washing_machine_end_1\"\nname: \"Washer\"\n"
+    },
+    {
+      "id": "o7",
+      "t": "card",
+      "n": "Robot vacuum",
+      "x": 164,
+      "y": 460,
+      "w": 226,
+      "h": 56,
+      "cfg": {
+        "type": "tile",
+        "entity": "ada_studio.vacuum_1",
+        "name": "Robot vacuum"
+      },
+      "pg": "p1",
+      "yaml": "type: \"tile\"\nentity: \"ada_studio.vacuum_1\"\nname: \"Robot vacuum\"\n"
+    },
+    {
+      "id": "o8",
+      "t": "label",
+      "n": "Lights section",
+      "x": 406,
+      "y": 108,
+      "size": 18,
+      "txt": "Lights",
+      "sty": [
+        2
+      ],
+      "pg": "p1"
+    },
+    {
+      "id": "o9",
+      "t": "card",
+      "n": "Living room",
+      "x": 406,
+      "y": 128,
+      "w": 226,
+      "h": 56,
+      "cfg": {
+        "type": "tile",
+        "entity": "ada_studio.light_living_room_1",
+        "name": "Living room"
+      },
+      "pg": "p1",
+      "yaml": "type: \"tile\"\nentity: \"ada_studio.light_living_room_1\"\nname: \"Living room\"\n"
+    },
+    {
+      "id": "o10",
+      "t": "card",
+      "n": "Kitchen",
+      "x": 406,
+      "y": 192,
+      "w": 226,
+      "h": 56,
+      "cfg": {
+        "type": "tile",
+        "entity": "ada_studio.light_kitchen_1",
+        "name": "Kitchen"
+      },
+      "pg": "p1",
+      "yaml": "type: \"tile\"\nentity: \"ada_studio.light_kitchen_1\"\nname: \"Kitchen\"\n"
+    },
+    {
+      "id": "o11",
+      "t": "card",
+      "n": "Bedroom",
+      "x": 406,
+      "y": 256,
+      "w": 226,
+      "h": 56,
+      "cfg": {
+        "type": "tile",
+        "entity": "ada_studio.light_bedroom_1",
+        "name": "Bedroom"
+      },
+      "pg": "p1",
+      "yaml": "type: \"tile\"\nentity: \"ada_studio.light_bedroom_1\"\nname: \"Bedroom\"\n"
+    },
+    {
+      "id": "o12",
+      "t": "card",
+      "n": "Garden",
+      "x": 406,
+      "y": 320,
+      "w": 226,
+      "h": 56,
+      "cfg": {
+        "type": "tile",
+        "entity": "ada_studio.light_garden_1",
+        "name": "Garden"
+      },
+      "pg": "p1",
+      "yaml": "type: \"tile\"\nentity: \"ada_studio.light_garden_1\"\nname: \"Garden\"\n"
+    },
+    {
+      "id": "o13",
+      "t": "label",
+      "n": "Climate section",
+      "x": 406,
+      "y": 404,
+      "size": 18,
+      "txt": "Climate",
+      "sty": [
+        2
+      ],
+      "pg": "p1"
+    },
+    {
+      "id": "o14",
+      "t": "card",
+      "n": "Thermostat",
+      "x": 406,
+      "y": 420,
+      "w": 226,
+      "h": 100,
+      "cfg": {
+        "type": "tile",
+        "entity": "ada_studio.climate_hvac_1",
+        "name": "Thermostat",
+        "features": [
+          {
+            "type": "target-temperature"
+          }
+        ]
+      },
+      "pg": "p1",
+      "yaml": "type: \"tile\"\nentity: \"ada_studio.climate_hvac_1\"\nname: \"Thermostat\"\nfeatures:\n  - type: \"target-temperature\"\n"
+    },
+    {
+      "id": "o15",
+      "t": "label",
+      "n": "Security section",
+      "x": 648,
+      "y": 108,
+      "size": 18,
+      "txt": "Security",
+      "sty": [
+        2
+      ],
+      "pg": "p1"
+    },
+    {
+      "id": "o16",
+      "t": "card",
+      "n": "Alarm",
+      "x": 648,
+      "y": 128,
+      "w": 226,
+      "h": 56,
+      "cfg": {
+        "type": "tile",
+        "entity": "ada_studio.alarm_control_panel_security_1",
+        "name": "Alarm"
+      },
+      "pg": "p1",
+      "yaml": "type: \"tile\"\nentity: \"ada_studio.alarm_control_panel_security_1\"\nname: \"Alarm\"\n"
+    },
+    {
+      "id": "o17",
+      "t": "card",
+      "n": "Front door",
+      "x": 648,
+      "y": 192,
+      "w": 226,
+      "h": 56,
+      "cfg": {
+        "type": "tile",
+        "entity": "ada_studio.lock_front_door_1",
+        "name": "Front door"
+      },
+      "pg": "p1",
+      "yaml": "type: \"tile\"\nentity: \"ada_studio.lock_front_door_1\"\nname: \"Front door\"\n"
+    },
+    {
+      "id": "o18",
+      "t": "card",
+      "n": "Entrance camera",
+      "x": 648,
+      "y": 256,
+      "w": 226,
+      "h": 152,
+      "cfg": {
+        "type": "picture-glance",
+        "title": "Entrance",
+        "image": "/local/telecamere/ingresso.jpg",
+        "entities": [
+          "ada_studio.light_hallway_1",
+          "ada_studio.binary_sensor_driveway_1",
+          "ada_studio.binary_sensor_front_door_1"
+        ]
+      },
+      "pg": "p1",
+      "yaml": "type: \"picture-glance\"\ntitle: \"Entrance\"\nimage: \"/local/telecamere/ingresso.jpg\"\nentities:\n  - \"ada_studio.light_hallway_1\"\n  - \"ada_studio.binary_sensor_driveway_1\"\n  - \"ada_studio.binary_sensor_front_door_1\"\n"
+    },
+    {
+      "id": "o19",
+      "t": "card",
+      "n": "Windows",
+      "x": 648,
+      "y": 416,
+      "w": 226,
+      "h": 56,
+      "cfg": {
+        "type": "tile",
+        "entity": "ada_studio.binary_sensor_windows_1",
+        "name": "Windows"
+      },
+      "pg": "p1",
+      "yaml": "type: \"tile\"\nentity: \"ada_studio.binary_sensor_windows_1\"\nname: \"Windows\"\n"
+    },
+    {
+      "id": "o20",
+      "t": "label",
+      "n": "Energy section",
+      "x": 890,
+      "y": 108,
+      "size": 18,
+      "txt": "Energy",
+      "sty": [
+        2
+      ],
+      "pg": "p1"
+    },
+    {
+      "id": "o21",
+      "t": "card",
+      "n": "Home power",
+      "x": 890,
+      "y": 128,
+      "w": 226,
+      "h": 168,
+      "cfg": {
+        "type": "gauge",
+        "entity": "ada_studio.sensor_home_consumption_1",
+        "name": "Home power",
+        "min": 0,
+        "max": 6
+      },
+      "pg": "p1",
+      "yaml": "type: \"gauge\"\nentity: \"ada_studio.sensor_home_consumption_1\"\nname: \"Home power\"\nmin: 0\nmax: 6\n"
+    },
+    {
+      "id": "o22",
+      "t": "card",
+      "n": "Solar",
+      "x": 890,
+      "y": 304,
+      "w": 226,
+      "h": 56,
+      "cfg": {
+        "type": "tile",
+        "entity": "ada_studio.sensor_solar_power_1",
+        "name": "Solar"
+      },
+      "pg": "p1",
+      "yaml": "type: \"tile\"\nentity: \"ada_studio.sensor_solar_power_1\"\nname: \"Solar\"\n"
+    },
+    {
+      "id": "o23",
+      "t": "label",
+      "n": "Media section",
+      "x": 890,
+      "y": 388,
+      "size": 18,
+      "txt": "Media",
+      "sty": [
+        2
+      ],
+      "pg": "p1"
+    },
+    {
+      "id": "o24",
+      "t": "card",
+      "n": "Media",
+      "x": 890,
+      "y": 404,
+      "w": 226,
+      "h": 140,
+      "cfg": {
+        "type": "media-control",
+        "entity": "ada_studio.media_player_living_room_1"
+      },
+      "pg": "p1",
+      "yaml": "type: \"media-control\"\nentity: \"ada_studio.media_player_living_room_1\"\n"
+    },
+    {
+      "id": "o25",
+      "t": "label",
+      "n": "Lights title",
+      "x": 164,
+      "y": 68,
+      "size": 28,
+      "txt": "Lights",
+      "sty": [
+        1
+      ],
+      "pg": "p2"
+    },
+    {
+      "id": "o26",
+      "t": "card",
+      "n": "Weather",
+      "x": 890,
+      "y": 40,
+      "w": 226,
+      "h": 56,
+      "cfg": {
+        "type": "tile",
+        "entity": "ada_studio.weather_1",
+        "name": "Weather"
+      },
+      "pg": "p2",
+      "yaml": "type: \"tile\"\nentity: \"ada_studio.weather_1\"\nname: \"Weather\"\n"
+    },
+    {
+      "id": "o27",
+      "t": "card",
+      "n": "Day scene",
+      "x": 164,
+      "y": 112,
+      "w": 226,
+      "h": 108,
+      "cfg": {
+        "type": "button",
+        "entity": "ada_studio.scene_day_1",
+        "name": "Day",
+        "icon": "mdi:white-balance-sunny",
+        "show_state": false
+      },
+      "pg": "p2",
+      "yaml": "type: \"button\"\nentity: \"ada_studio.scene_day_1\"\nname: \"Day\"\nicon: \"mdi:white-balance-sunny\"\nshow_state: false\n"
+    },
+    {
+      "id": "o28",
+      "t": "card",
+      "n": "Evening scene",
+      "x": 406,
+      "y": 112,
+      "w": 226,
+      "h": 108,
+      "cfg": {
+        "type": "button",
+        "entity": "ada_studio.scene_evening_1",
+        "name": "Evening",
+        "icon": "mdi:sofa",
+        "show_state": false
+      },
+      "pg": "p2",
+      "yaml": "type: \"button\"\nentity: \"ada_studio.scene_evening_1\"\nname: \"Evening\"\nicon: \"mdi:sofa\"\nshow_state: false\n"
+    },
+    {
+      "id": "o29",
+      "t": "card",
+      "n": "Movie scene",
+      "x": 648,
+      "y": 112,
+      "w": 226,
+      "h": 108,
+      "cfg": {
+        "type": "button",
+        "entity": "ada_studio.scene_cinema_1",
+        "name": "Movie",
+        "icon": "mdi:television",
+        "show_state": false
+      },
+      "pg": "p2",
+      "yaml": "type: \"button\"\nentity: \"ada_studio.scene_cinema_1\"\nname: \"Movie\"\nicon: \"mdi:television\"\nshow_state: false\n"
+    },
+    {
+      "id": "o30",
+      "t": "card",
+      "n": "Night scene",
+      "x": 890,
+      "y": 112,
+      "w": 226,
+      "h": 108,
+      "cfg": {
+        "type": "button",
+        "entity": "ada_studio.scene_night_1",
+        "name": "Night",
+        "icon": "mdi:weather-night",
+        "show_state": false
+      },
+      "pg": "p2",
+      "yaml": "type: \"button\"\nentity: \"ada_studio.scene_night_1\"\nname: \"Night\"\nicon: \"mdi:weather-night\"\nshow_state: false\n"
+    },
+    {
+      "id": "o31",
+      "t": "label",
+      "n": "Living room section",
+      "x": 164,
+      "y": 248,
+      "size": 18,
+      "txt": "Living room",
+      "sty": [
+        2
+      ],
+      "pg": "p2"
+    },
+    {
+      "id": "o32",
+      "t": "card",
+      "n": "Chandelier",
+      "x": 164,
+      "y": 264,
+      "w": 226,
+      "h": 108,
+      "cfg": {
+        "type": "tile",
+        "entity": "ada_studio.light_chandelier_1",
+        "name": "Chandelier",
+        "features": [
+          {
+            "type": "light-brightness"
+          }
+        ]
+      },
+      "pg": "p2",
+      "yaml": "type: \"tile\"\nentity: \"ada_studio.light_chandelier_1\"\nname: \"Chandelier\"\nfeatures:\n  - type: \"light-brightness\"\n"
+    },
+    {
+      "id": "o33",
+      "t": "card",
+      "n": "Floor lamp",
+      "x": 164,
+      "y": 380,
+      "w": 226,
+      "h": 106,
+      "cfg": {
+        "type": "tile",
+        "entity": "ada_studio.light_floor_lamp_1",
+        "name": "Floor lamp",
+        "features": [
+          {
+            "type": "light-brightness"
+          }
+        ]
+      },
+      "pg": "p2",
+      "yaml": "type: \"tile\"\nentity: \"ada_studio.light_floor_lamp_1\"\nname: \"Floor lamp\"\nfeatures:\n  - type: \"light-brightness\"\n"
+    },
+    {
+      "id": "o34",
+      "t": "card",
+      "n": "LED strip",
+      "x": 164,
+      "y": 494,
+      "w": 226,
+      "h": 56,
+      "cfg": {
+        "type": "tile",
+        "entity": "ada_studio.light_led_strip_1",
+        "name": "LED strip"
+      },
+      "pg": "p2",
+      "yaml": "type: \"tile\"\nentity: \"ada_studio.light_led_strip_1\"\nname: \"LED strip\"\n"
+    },
+    {
+      "id": "o35",
+      "t": "label",
+      "n": "Kitchen section",
+      "x": 406,
+      "y": 248,
+      "size": 18,
+      "txt": "Kitchen",
+      "sty": [
+        2
+      ],
+      "pg": "p2"
+    },
+    {
+      "id": "o36",
+      "t": "card",
+      "n": "Cabinet lights",
+      "x": 406,
+      "y": 264,
+      "w": 226,
+      "h": 98,
+      "cfg": {
+        "type": "tile",
+        "entity": "ada_studio.light_wall_cabinets_1",
+        "name": "Cabinet lights"
+      },
+      "pg": "p2",
+      "yaml": "type: \"tile\"\nentity: \"ada_studio.light_wall_cabinets_1\"\nname: \"Cabinet lights\"\n"
+    },
+    {
+      "id": "o37",
+      "t": "card",
+      "n": "Island",
+      "x": 406,
+      "y": 370,
+      "w": 226,
+      "h": 110,
+      "cfg": {
+        "type": "tile",
+        "entity": "ada_studio.light_kitchen_island_1",
+        "name": "Island",
+        "features": [
+          {
+            "type": "light-brightness"
+          }
+        ]
+      },
+      "pg": "p2",
+      "yaml": "type: \"tile\"\nentity: \"ada_studio.light_kitchen_island_1\"\nname: \"Island\"\nfeatures:\n  - type: \"light-brightness\"\n"
+    },
+    {
+      "id": "o38",
+      "t": "card",
+      "n": "Hood light",
+      "x": 406,
+      "y": 488,
+      "w": 226,
+      "h": 56,
+      "cfg": {
+        "type": "tile",
+        "entity": "ada_studio.light_cooker_hood_1",
+        "name": "Hood light"
+      },
+      "pg": "p2",
+      "yaml": "type: \"tile\"\nentity: \"ada_studio.light_cooker_hood_1\"\nname: \"Hood light\"\n"
+    },
+    {
+      "id": "o39",
+      "t": "label",
+      "n": "Bedroom section",
+      "x": 648,
+      "y": 248,
+      "size": 18,
+      "txt": "Bedroom",
+      "sty": [
+        2
+      ],
+      "pg": "p2"
+    },
+    {
+      "id": "o40",
+      "t": "card",
+      "n": "Bedside lamp",
+      "x": 648,
+      "y": 372,
+      "w": 226,
+      "h": 110,
+      "cfg": {
+        "type": "tile",
+        "entity": "ada_studio.light_bedside_lamp_1",
+        "name": "Bedside lamp",
+        "features": [
+          {
+            "type": "light-brightness"
+          }
+        ]
+      },
+      "pg": "p2",
+      "yaml": "type: \"tile\"\nentity: \"ada_studio.light_bedside_lamp_1\"\nname: \"Bedside lamp\"\nfeatures:\n  - type: \"light-brightness\"\n"
+    },
+    {
+      "id": "o41",
+      "t": "card",
+      "n": "Roller shutter",
+      "x": 648,
+      "y": 264,
+      "w": 226,
+      "h": 100,
+      "cfg": {
+        "type": "tile",
+        "entity": "ada_studio.cover_living_room_window_1",
+        "name": "Roller shutter",
+        "features": [
+          {
+            "type": "cover-open-close"
+          }
+        ]
+      },
+      "pg": "p2",
+      "yaml": "type: \"tile\"\nentity: \"ada_studio.cover_living_room_window_1\"\nname: \"Roller shutter\"\nfeatures:\n  - type: \"cover-open-close\"\n"
+    },
+    {
+      "id": "o42",
+      "t": "label",
+      "n": "Outdoor section",
+      "x": 890,
+      "y": 248,
+      "size": 18,
+      "txt": "Outdoor",
+      "sty": [
+        2
+      ],
+      "pg": "p2"
+    },
+    {
+      "id": "o43",
+      "t": "card",
+      "n": "Garden",
+      "x": 890,
+      "y": 264,
+      "w": 226,
+      "h": 56,
+      "cfg": {
+        "type": "tile",
+        "entity": "ada_studio.light_garden_1",
+        "name": "Garden"
+      },
+      "pg": "p2",
+      "yaml": "type: \"tile\"\nentity: \"ada_studio.light_garden_1\"\nname: \"Garden\"\n"
+    },
+    {
+      "id": "o44",
+      "t": "card",
+      "n": "Entrance",
+      "x": 890,
+      "y": 328,
+      "w": 226,
+      "h": 56,
+      "cfg": {
+        "type": "tile",
+        "entity": "ada_studio.light_hallway_1",
+        "name": "Entrance"
+      },
+      "pg": "p2",
+      "yaml": "type: \"tile\"\nentity: \"ada_studio.light_hallway_1\"\nname: \"Entrance\"\n"
+    },
+    {
+      "id": "o45",
+      "t": "card",
+      "n": "Driveway sensor",
+      "x": 890,
+      "y": 392,
+      "w": 226,
+      "h": 56,
+      "cfg": {
+        "type": "tile",
+        "entity": "ada_studio.binary_sensor_driveway_1",
+        "name": "Driveway sensor"
+      },
+      "pg": "p2",
+      "yaml": "type: \"tile\"\nentity: \"ada_studio.binary_sensor_driveway_1\"\nname: \"Driveway sensor\"\n"
+    },
+    {
+      "id": "o46",
+      "t": "label",
+      "n": "Climate title",
+      "x": 164,
+      "y": 68,
+      "size": 28,
+      "txt": "Climate",
+      "sty": [
+        1
+      ],
+      "pg": "p3"
+    },
+    {
+      "id": "o47",
+      "t": "card",
+      "n": "Weather",
+      "x": 890,
+      "y": 40,
+      "w": 226,
+      "h": 56,
+      "cfg": {
+        "type": "tile",
+        "entity": "ada_studio.weather_1",
+        "name": "Weather"
+      },
+      "pg": "p3",
+      "yaml": "type: \"tile\"\nentity: \"ada_studio.weather_1\"\nname: \"Weather\"\n"
+    },
+    {
+      "id": "o48",
+      "t": "card",
+      "n": "Living room thermostat",
+      "x": 164,
+      "y": 112,
+      "w": 226,
+      "h": 268,
+      "cfg": {
+        "type": "thermostat",
+        "entity": "ada_studio.climate_hvac_1",
+        "name": "Living room"
+      },
+      "pg": "p3",
+      "yaml": "type: \"thermostat\"\nentity: \"ada_studio.climate_hvac_1\"\nname: \"Living room\"\n"
+    },
+    {
+      "id": "o49",
+      "t": "card",
+      "n": "Bedroom thermostat",
+      "x": 406,
+      "y": 112,
+      "w": 226,
+      "h": 268,
+      "cfg": {
+        "type": "thermostat",
+        "entity": "ada_studio.climate_heatpump_1",
+        "name": "Bedroom"
+      },
+      "pg": "p3",
+      "yaml": "type: \"thermostat\"\nentity: \"ada_studio.climate_heatpump_1\"\nname: \"Bedroom\"\n"
+    },
+    {
+      "id": "o50",
+      "t": "card",
+      "n": "Living room humidity",
+      "x": 648,
+      "y": 112,
+      "w": 226,
+      "h": 56,
+      "cfg": {
+        "type": "tile",
+        "entity": "ada_studio.sensor_outside_humidity_1",
+        "name": "Living room humidity"
+      },
+      "pg": "p3",
+      "yaml": "type: \"tile\"\nentity: \"ada_studio.sensor_outside_humidity_1\"\nname: \"Living room humidity\"\n"
+    },
+    {
+      "id": "o51",
+      "t": "card",
+      "n": "Living room CO₂",
+      "x": 648,
+      "y": 176,
+      "w": 226,
+      "h": 56,
+      "cfg": {
+        "type": "tile",
+        "entity": "ada_studio.sensor_carbon_dioxide_1",
+        "name": "Living room CO₂"
+      },
+      "pg": "p3",
+      "yaml": "type: \"tile\"\nentity: \"ada_studio.sensor_carbon_dioxide_1\"\nname: \"Living room CO₂\"\n"
+    },
+    {
+      "id": "o52",
+      "t": "card",
+      "n": "Ventilation",
+      "x": 648,
+      "y": 240,
+      "w": 226,
+      "h": 56,
+      "cfg": {
+        "type": "tile",
+        "entity": "ada_studio.fan_living_room_fan_1",
+        "name": "Ventilation"
+      },
+      "pg": "p3",
+      "yaml": "type: \"tile\"\nentity: \"ada_studio.fan_living_room_fan_1\"\nname: \"Ventilation\"\n"
+    },
+    {
+      "id": "o53",
+      "t": "card",
+      "n": "Windows",
+      "x": 648,
+      "y": 304,
+      "w": 226,
+      "h": 56,
+      "cfg": {
+        "type": "tile",
+        "entity": "ada_studio.binary_sensor_windows_1",
+        "name": "Windows"
+      },
+      "pg": "p3",
+      "yaml": "type: \"tile\"\nentity: \"ada_studio.binary_sensor_windows_1\"\nname: \"Windows\"\n"
+    },
+    {
+      "id": "o54",
+      "t": "card",
+      "n": "Boiler",
+      "x": 890,
+      "y": 112,
+      "w": 226,
+      "h": 56,
+      "cfg": {
+        "type": "tile",
+        "entity": "ada_studio.sensor_boiler_flow_1",
+        "name": "Boiler"
+      },
+      "pg": "p3",
+      "yaml": "type: \"tile\"\nentity: \"ada_studio.sensor_boiler_flow_1\"\nname: \"Boiler\"\n"
+    },
+    {
+      "id": "o56",
+      "t": "card",
+      "n": "Forecast",
+      "x": 890,
+      "y": 176,
+      "w": 226,
+      "h": 56,
+      "cfg": {
+        "type": "tile",
+        "entity": "ada_studio.weather_1",
+        "name": "Forecast"
+      },
+      "pg": "p3",
+      "yaml": "type: \"tile\"\nentity: \"ada_studio.weather_1\"\nname: \"Forecast\"\n"
+    },
+    {
+      "id": "o57",
+      "t": "card",
+      "n": "Gas today",
+      "x": 890,
+      "y": 240,
+      "w": 226,
+      "h": 168,
+      "cfg": {
+        "type": "gauge",
+        "entity": "ada_studio.sensor_gas_today_1",
+        "name": "Gas today",
+        "min": 0,
+        "max": 5
+      },
+      "pg": "p3",
+      "yaml": "type: \"gauge\"\nentity: \"ada_studio.sensor_gas_today_1\"\nname: \"Gas today\"\nmin: 0\nmax: 5\n"
+    },
+    {
+      "id": "o117",
+      "t": "card",
+      "n": "Indoor temperature",
+      "x": 164,
+      "y": 388,
+      "w": 226,
+      "h": 216,
+      "pg": "p3",
+      "cfg": {
+        "type": "custom:mini-graph-card",
+        "name": "Indoor temperature",
+        "icon": "mdi:home-thermometer",
+        "hours_to_show": 24,
+        "points_per_hour": 2,
+        "line_width": 3,
+        "smoothing": true,
+        "show": {
+          "labels": true,
+          "legend": false,
+          "fill": "fade"
+        },
+        "entities": [
+          {
+            "entity": "ada_studio.sensor_living_room_temperature_1",
+            "name": "Living room",
+            "color": "#ff9800"
+          },
+          {
+            "entity": "ada_studio.sensor_bedroom_temperature_1",
+            "name": "Bedroom",
+            "color": "#4dd0e1",
+            "show_state": true
+          }
+        ]
+      },
+      "yaml": "type: custom:mini-graph-card\nname: Indoor temperature\nicon: mdi:home-thermometer\nhours_to_show: 24\npoints_per_hour: 2\nline_width: 3\nsmoothing: true\nshow:\n  labels: true\n  legend: false\n  fill: fade\nentities:\n- entity: ada_studio.sensor_living_room_temperature_1\n  name: Living room\n  color: '#ff9800'\n- entity: ada_studio.sensor_bedroom_temperature_1\n  name: Bedroom\n  color: '#4dd0e1'\n  show_state: true\n"
+    },
+    {
+      "id": "o118",
+      "t": "card",
+      "n": "Outdoor temperature",
+      "x": 406,
+      "y": 388,
+      "w": 226,
+      "h": 216,
+      "pg": "p3",
+      "cfg": {
+        "type": "custom:mini-graph-card",
+        "name": "Outdoor temperature",
+        "icon": "mdi:sun-thermometer",
+        "hours_to_show": 24,
+        "points_per_hour": 2,
+        "line_width": 3,
+        "smoothing": true,
+        "show": {
+          "labels": true,
+          "legend": true,
+          "fill": "fade"
+        },
+        "color_thresholds": [
+          {
+            "value": 6,
+            "color": "#4dd0e1"
+          },
+          {
+            "value": 12,
+            "color": "#ffca28"
+          },
+          {
+            "value": 15,
+            "color": "#ff7043"
+          }
+        ],
+        "entities": [
+          {
+            "entity": "ada_studio.sensor_outside_temperature_1",
+            "name": "Outdoor"
+          }
+        ]
+      },
+      "yaml": "type: custom:mini-graph-card\nname: Outdoor temperature\nicon: mdi:sun-thermometer\nhours_to_show: 24\npoints_per_hour: 2\nline_width: 3\nsmoothing: true\nshow:\n  labels: true\n  legend: true\n  fill: fade\ncolor_thresholds:\n  - value: 6\n    color: '#4dd0e1'\n  - value: 12\n    color: '#ffca28'\n  - value: 15\n    color: '#ff7043'\nentities:\n  - entity: ada_studio.sensor_outside_temperature_1\n    name: Outdoor\n"
+    },
+    {
+      "id": "o58",
+      "t": "label",
+      "n": "Security title",
+      "x": 164,
+      "y": 68,
+      "size": 28,
+      "txt": "Security",
+      "sty": [
+        1
+      ],
+      "pg": "p4"
+    },
+    {
+      "id": "o59",
+      "t": "card",
+      "n": "Weather",
+      "x": 890,
+      "y": 40,
+      "w": 226,
+      "h": 56,
+      "cfg": {
+        "type": "tile",
+        "entity": "ada_studio.weather_1",
+        "name": "Weather"
+      },
+      "pg": "p4",
+      "yaml": "type: \"tile\"\nentity: \"ada_studio.weather_1\"\nname: \"Weather\"\n"
+    },
+    {
+      "id": "o60",
+      "t": "card",
+      "n": "Alarm",
+      "x": 164,
+      "y": 112,
+      "w": 306,
+      "h": 528,
+      "cfg": {
+        "type": "alarm-panel",
+        "entity": "ada_studio.alarm_control_panel_security_1",
+        "name": "Alarm",
+        "states": [
+          "arm_home",
+          "arm_away",
+          "arm_night"
+        ]
+      },
+      "pg": "p4",
+      "yaml": "type: \"alarm-panel\"\nentity: \"ada_studio.alarm_control_panel_security_1\"\nname: \"Alarm\"\nstates:\n  - \"arm_home\"\n  - \"arm_away\"\n  - \"arm_night\"\n"
+    },
+    {
+      "id": "o61",
+      "t": "card",
+      "n": "Camera entrance",
+      "x": 486,
+      "y": 112,
+      "w": 306,
+      "h": 172,
+      "cfg": {
+        "type": "picture-glance",
+        "title": "Entrance",
+        "image": "/local/telecamere/ingresso.jpg",
+        "entities": [
+          "ada_studio.light_hallway_1",
+          "ada_studio.binary_sensor_driveway_1"
+        ],
+        "aspect_ratio": "16:9"
+      },
+      "pg": "p4",
+      "yaml": "type: \"picture-glance\"\ntitle: \"Entrance\"\nimage: \"/local/telecamere/ingresso.jpg\"\nentities:\n  - \"ada_studio.light_hallway_1\"\n  - \"ada_studio.binary_sensor_driveway_1\"\naspect_ratio: \"16:9\"\n"
+    },
+    {
+      "id": "o62",
+      "t": "card",
+      "n": "Camera garden",
+      "x": 486,
+      "y": 292,
+      "w": 306,
+      "h": 172,
+      "cfg": {
+        "type": "picture-glance",
+        "title": "Garden",
+        "image": "/local/telecamere/giardino.jpg",
+        "entities": [
+          "ada_studio.light_garden_1",
+          "ada_studio.binary_sensor_movement_backyard_1"
+        ],
+        "aspect_ratio": "16:9"
+      },
+      "pg": "p4",
+      "yaml": "type: \"picture-glance\"\ntitle: \"Garden\"\nimage: \"/local/telecamere/giardino.jpg\"\nentities:\n  - \"ada_studio.light_garden_1\"\n  - \"ada_studio.binary_sensor_movement_backyard_1\"\naspect_ratio: \"16:9\"\n"
+    },
+    {
+      "id": "o63",
+      "t": "card",
+      "n": "Doors & windows",
+      "x": 808,
+      "y": 112,
+      "w": 308,
+      "h": 280,
+      "cfg": {
+        "type": "entities",
+        "title": "Doors & windows",
+        "state_color": true,
+        "entities": [
+          {
+            "entity": "ada_studio.binary_sensor_front_door_1",
+            "name": "Front door"
+          },
+          {
+            "entity": "ada_studio.binary_sensor_garage_door_1",
+            "name": "Garage door"
+          },
+          {
+            "entity": "ada_studio.binary_sensor_bathroom_window_1",
+            "name": "Bathroom window"
+          },
+          {
+            "entity": "ada_studio.binary_sensor_living_room_french_window_1",
+            "name": "Living room French door"
+          },
+          {
+            "entity": "ada_studio.binary_sensor_bedroom_windows_1",
+            "name": "Bedroom windows"
+          }
+        ]
+      },
+      "pg": "p4",
+      "yaml": "type: \"entities\"\ntitle: \"Doors & windows\"\nstate_color: true\nentities:\n  - entity: \"ada_studio.binary_sensor_front_door_1\"\n    name: \"Front door\"\n  - entity: \"ada_studio.binary_sensor_garage_door_1\"\n    name: \"Garage door\"\n  - entity: \"ada_studio.binary_sensor_bathroom_window_1\"\n    name: \"Bathroom window\"\n  - entity: \"ada_studio.binary_sensor_living_room_french_window_1\"\n    name: \"Living room French door\"\n  - entity: \"ada_studio.binary_sensor_bedroom_windows_1\"\n    name: \"Bedroom windows\"\n"
+    },
+    {
+      "id": "o64",
+      "t": "card",
+      "n": "Front door lock",
+      "x": 486,
+      "y": 472,
+      "w": 306,
+      "h": 56,
+      "cfg": {
+        "type": "tile",
+        "entity": "ada_studio.lock_front_door_1",
+        "name": "Front door lock"
+      },
+      "pg": "p4",
+      "yaml": "type: \"tile\"\nentity: \"ada_studio.lock_front_door_1\"\nname: \"Front door lock\"\n"
+    },
+    {
+      "id": "o65",
+      "t": "card",
+      "n": "Gate",
+      "x": 486,
+      "y": 536,
+      "w": 306,
+      "h": 56,
+      "cfg": {
+        "type": "tile",
+        "entity": "ada_studio.lock_kitchen_door_1",
+        "name": "Gate"
+      },
+      "pg": "p4",
+      "yaml": "type: \"tile\"\nentity: \"ada_studio.lock_kitchen_door_1\"\nname: \"Gate\"\n"
+    },
+    {
+      "id": "o66",
+      "t": "card",
+      "n": "Garden motion",
+      "x": 808,
+      "y": 400,
+      "w": 308,
+      "h": 56,
+      "cfg": {
+        "type": "tile",
+        "entity": "ada_studio.binary_sensor_movement_backyard_1",
+        "name": "Garden motion"
+      },
+      "pg": "p4",
+      "yaml": "type: \"tile\"\nentity: \"ada_studio.binary_sensor_movement_backyard_1\"\nname: \"Garden motion\"\n"
+    },
+    {
+      "id": "o67",
+      "t": "card",
+      "n": "Water leak",
+      "x": 808,
+      "y": 464,
+      "w": 308,
+      "h": 56,
+      "cfg": {
+        "type": "tile",
+        "entity": "ada_studio.binary_sensor_basement_floor_wet_1",
+        "name": "Water leak"
+      },
+      "pg": "p4",
+      "yaml": "type: \"tile\"\nentity: \"ada_studio.binary_sensor_basement_floor_wet_1\"\nname: \"Water leak\"\n"
+    },
+    {
+      "id": "o68",
+      "t": "label",
+      "n": "Energy title",
+      "x": 164,
+      "y": 68,
+      "size": 28,
+      "txt": "Energy",
+      "sty": [
+        1
+      ],
+      "pg": "p5"
+    },
+    {
+      "id": "o69",
+      "t": "card",
+      "n": "Weather",
+      "x": 890,
+      "y": 40,
+      "w": 226,
+      "h": 56,
+      "cfg": {
+        "type": "tile",
+        "entity": "ada_studio.weather_1",
+        "name": "Weather"
+      },
+      "pg": "p5",
+      "yaml": "type: \"tile\"\nentity: \"ada_studio.weather_1\"\nname: \"Weather\"\n"
+    },
+    {
+      "id": "o70",
+      "t": "card",
+      "n": "Energy distribution",
+      "x": 164,
+      "y": 112,
+      "w": 306,
+      "h": 306,
+      "cfg": {
+        "type": "custom:power-flow-card-plus",
+        "kw_decimals": 2,
+        "watt_threshold": 1000,
+        "clickable_entities": true,
+        "use_new_flow_rate_model": true,
+        "entities": {
+          "grid": {
+            "entity": "ada_studio.sensor_grid_power_1",
+            "name": "Grid"
+          },
+          "solar": {
+            "entity": "ada_studio.sensor_solar_power_1",
+            "name": "Solar"
+          },
+          "battery": {
+            "entity": "ada_studio.sensor_battery_power_1",
+            "state_of_charge": "ada_studio.sensor_battery_level_1",
+            "name": "Battery"
+          },
+          "home": {
+            "entity": "ada_studio.sensor_home_consumption_1",
+            "name": "Home"
+          }
+        }
+      },
+      "pg": "p5",
+      "yaml": "type: \"custom:power-flow-card-plus\"\nkw_decimals: 2\nwatt_threshold: 1000\nclickable_entities: true\nuse_new_flow_rate_model: true\nentities:\n  grid:\n    entity: \"ada_studio.sensor_grid_power_1\"\n    name: \"Grid\"\n  solar:\n    entity: \"ada_studio.sensor_solar_power_1\"\n    name: \"Solar\"\n  battery:\n    entity: \"ada_studio.sensor_battery_power_1\"\n    state_of_charge: \"ada_studio.sensor_battery_level_1\"\n    name: \"Battery\"\n  home:\n    entity: \"ada_studio.sensor_home_consumption_1\"\n    name: \"Home\"\n"
+    },
+    {
+      "id": "o71",
+      "t": "card",
+      "n": "Energy this week",
+      "x": 486,
+      "y": 112,
+      "w": 306,
+      "h": 306,
+      "cfg": {
+        "type": "statistics-graph",
+        "title": "Energy this week",
+        "chart_type": "bar",
+        "period": "day",
+        "days_to_show": 7,
+        "stat_types": [
+          "change"
+        ],
+        "entities": [
+          {
+            "entity": "ada_studio.sensor_solar_energy_1",
+            "name": "Solar"
+          },
+          {
+            "entity": "ada_studio.sensor_grid_energy_1",
+            "name": "Grid"
+          }
+        ]
+      },
+      "pg": "p5",
+      "yaml": "type: \"statistics-graph\"\ntitle: \"Energy this week\"\nchart_type: \"bar\"\nperiod: \"day\"\ndays_to_show: 7\nstat_types:\n  - \"change\"\nentities:\n  - entity: \"ada_studio.sensor_solar_energy_1\"\n    name: \"Solar\"\n  - entity: \"ada_studio.sensor_grid_energy_1\"\n    name: \"Grid\"\n"
+    },
+    {
+      "id": "o72",
+      "t": "card",
+      "n": "Self-consumption",
+      "x": 164,
+      "y": 426,
+      "w": 306,
+      "h": 196,
+      "cfg": {
+        "type": "gauge",
+        "entity": "ada_studio.sensor_self_consumption_1",
+        "name": "Self-consumption",
+        "min": 0,
+        "max": 100
+      },
+      "pg": "p5",
+      "yaml": "type: \"gauge\"\nentity: \"ada_studio.sensor_self_consumption_1\"\nname: \"Self-consumption\"\nmin: 0\nmax: 100\n"
+    },
+    {
+      "id": "o73",
+      "t": "card",
+      "n": "Battery",
+      "x": 808,
+      "y": 112,
+      "w": 308,
+      "h": 56,
+      "cfg": {
+        "type": "tile",
+        "entity": "ada_studio.sensor_battery_level_1",
+        "name": "Battery"
+      },
+      "pg": "p5",
+      "yaml": "type: \"tile\"\nentity: \"ada_studio.sensor_battery_level_1\"\nname: \"Battery\"\n"
+    },
+    {
+      "id": "o74",
+      "t": "card",
+      "n": "EV",
+      "x": 808,
+      "y": 176,
+      "w": 308,
+      "h": 56,
+      "cfg": {
+        "type": "tile",
+        "entity": "ada_studio.sensor_car_charge_1",
+        "name": "EV"
+      },
+      "pg": "p5",
+      "yaml": "type: \"tile\"\nentity: \"ada_studio.sensor_car_charge_1\"\nname: \"EV\"\n"
+    },
+    {
+      "id": "o75",
+      "t": "card",
+      "n": "Washer",
+      "x": 808,
+      "y": 240,
+      "w": 308,
+      "h": 56,
+      "cfg": {
+        "type": "tile",
+        "entity": "ada_studio.sensor_washing_machine_power_1",
+        "name": "Washer"
+      },
+      "pg": "p5",
+      "yaml": "type: \"tile\"\nentity: \"ada_studio.sensor_washing_machine_power_1\"\nname: \"Washer\"\n"
+    },
+    {
+      "id": "o76",
+      "t": "card",
+      "n": "Tariff",
+      "x": 808,
+      "y": 304,
+      "w": 308,
+      "h": 56,
+      "cfg": {
+        "type": "tile",
+        "entity": "ada_studio.sensor_tariff_1",
+        "name": "Tariff"
+      },
+      "pg": "p5",
+      "yaml": "type: \"tile\"\nentity: \"ada_studio.sensor_tariff_1\"\nname: \"Tariff\"\n"
+    },
+    {
+      "id": "o77",
+      "t": "card",
+      "n": "Cost today",
+      "x": 486,
+      "y": 426,
+      "w": 306,
+      "h": 196,
+      "cfg": {
+        "type": "gauge",
+        "entity": "ada_studio.sensor_cost_today_1",
+        "name": "Cost today",
+        "min": 0,
+        "max": 5
+      },
+      "pg": "p5",
+      "yaml": "type: \"gauge\"\nentity: \"ada_studio.sensor_cost_today_1\"\nname: \"Cost today\"\nmin: 0\nmax: 5\n"
+    },
+    {
+      "id": "o78",
+      "t": "label",
+      "n": "Media title",
+      "x": 164,
+      "y": 68,
+      "size": 28,
+      "txt": "Media",
+      "sty": [
+        1
+      ],
+      "pg": "p6"
+    },
+    {
+      "id": "o79",
+      "t": "card",
+      "n": "Weather",
+      "x": 890,
+      "y": 40,
+      "w": 226,
+      "h": 56,
+      "cfg": {
+        "type": "tile",
+        "entity": "ada_studio.weather_1",
+        "name": "Weather"
+      },
+      "pg": "p6",
+      "yaml": "type: \"tile\"\nentity: \"ada_studio.weather_1\"\nname: \"Weather\"\n"
+    },
+    {
+      "id": "o80",
+      "t": "card",
+      "n": "Now playing",
+      "x": 164,
+      "y": 112,
+      "w": 628,
+      "h": 320,
+      "cfg": {
+        "type": "media-control",
+        "entity": "ada_studio.media_player_living_room_1"
+      },
+      "pg": "p6",
+      "yaml": "type: \"media-control\"\nentity: \"ada_studio.media_player_living_room_1\"\n"
+    },
+    {
+      "id": "o81",
+      "t": "card",
+      "n": "Evening jazz favorite",
+      "x": 164,
+      "y": 440,
+      "w": 145,
+      "h": 100,
+      "cfg": {
+        "type": "button",
+        "entity": "ada_studio.script_evening_jazz_1",
+        "name": "Evening jazz",
+        "icon": "mdi:saxophone",
+        "show_state": false
+      },
+      "pg": "p6",
+      "yaml": "type: \"button\"\nentity: \"ada_studio.script_evening_jazz_1\"\nname: \"Evening jazz\"\nicon: \"mdi:saxophone\"\nshow_state: false\n"
+    },
+    {
+      "id": "o82",
+      "t": "card",
+      "n": "Radio favorite",
+      "x": 325,
+      "y": 440,
+      "w": 145,
+      "h": 100,
+      "cfg": {
+        "type": "button",
+        "entity": "ada_studio.script_radio_1",
+        "name": "Radio",
+        "icon": "mdi:radio",
+        "show_state": false
+      },
+      "pg": "p6",
+      "yaml": "type: \"button\"\nentity: \"ada_studio.script_radio_1\"\nname: \"Radio\"\nicon: \"mdi:radio\"\nshow_state: false\n"
+    },
+    {
+      "id": "o83",
+      "t": "card",
+      "n": "Podcast favorite",
+      "x": 486,
+      "y": 440,
+      "w": 145,
+      "h": 100,
+      "cfg": {
+        "type": "button",
+        "entity": "ada_studio.script_podcast_1",
+        "name": "Podcast",
+        "icon": "mdi:podcast",
+        "show_state": false
+      },
+      "pg": "p6",
+      "yaml": "type: \"button\"\nentity: \"ada_studio.script_podcast_1\"\nname: \"Podcast\"\nicon: \"mdi:podcast\"\nshow_state: false\n"
+    },
+    {
+      "id": "o84",
+      "t": "card",
+      "n": "Relax favorite",
+      "x": 647,
+      "y": 440,
+      "w": 145,
+      "h": 100,
+      "cfg": {
+        "type": "button",
+        "entity": "ada_studio.scene_relax_1",
+        "name": "Relax",
+        "icon": "mdi:sofa",
+        "show_state": false
+      },
+      "pg": "p6",
+      "yaml": "type: \"button\"\nentity: \"ada_studio.scene_relax_1\"\nname: \"Relax\"\nicon: \"mdi:sofa\"\nshow_state: false\n"
+    },
+    {
+      "id": "o85",
+      "t": "card",
+      "n": "Living room TV",
+      "x": 164,
+      "y": 548,
+      "w": 306,
+      "h": 56,
+      "cfg": {
+        "type": "tile",
+        "entity": "ada_studio.media_player_lounge_room_1",
+        "name": "Living room TV"
+      },
+      "pg": "p6",
+      "yaml": "type: \"tile\"\nentity: \"ada_studio.media_player_lounge_room_1\"\nname: \"Living room TV\"\n"
+    },
+    {
+      "id": "o86",
+      "t": "card",
+      "n": "Soundbar",
+      "x": 486,
+      "y": 548,
+      "w": 306,
+      "h": 56,
+      "cfg": {
+        "type": "tile",
+        "entity": "ada_studio.media_player_browse_1",
+        "name": "Soundbar"
+      },
+      "pg": "p6",
+      "yaml": "type: \"tile\"\nentity: \"ada_studio.media_player_browse_1\"\nname: \"Soundbar\"\n"
+    },
+    {
+      "id": "o87",
+      "t": "card",
+      "n": "Living room",
+      "x": 808,
+      "y": 112,
+      "w": 308,
+      "h": 100,
+      "cfg": {
+        "type": "tile",
+        "entity": "ada_studio.media_player_living_room_1",
+        "name": "Living room",
+        "features": [
+          {
+            "type": "media-player-volume-slider"
+          }
+        ]
+      },
+      "pg": "p6",
+      "yaml": "type: \"tile\"\nentity: \"ada_studio.media_player_living_room_1\"\nname: \"Living room\"\nfeatures:\n  - type: \"media-player-volume-slider\"\n"
+    },
+    {
+      "id": "o88",
+      "t": "card",
+      "n": "Kitchen",
+      "x": 808,
+      "y": 220,
+      "w": 308,
+      "h": 100,
+      "cfg": {
+        "type": "tile",
+        "entity": "ada_studio.media_player_kitchen_1",
+        "name": "Kitchen",
+        "features": [
+          {
+            "type": "media-player-volume-slider"
+          }
+        ]
+      },
+      "pg": "p6",
+      "yaml": "type: \"tile\"\nentity: \"ada_studio.media_player_kitchen_1\"\nname: \"Kitchen\"\nfeatures:\n  - type: \"media-player-volume-slider\"\n"
+    },
+    {
+      "id": "o89",
+      "t": "card",
+      "n": "Bedroom",
+      "x": 808,
+      "y": 328,
+      "w": 308,
+      "h": 100,
+      "cfg": {
+        "type": "tile",
+        "entity": "ada_studio.media_player_bedroom_1",
+        "name": "Bedroom",
+        "features": [
+          {
+            "type": "media-player-volume-slider"
+          }
+        ]
+      },
+      "pg": "p6",
+      "yaml": "type: \"tile\"\nentity: \"ada_studio.media_player_bedroom_1\"\nname: \"Bedroom\"\nfeatures:\n  - type: \"media-player-volume-slider\"\n"
+    },
+    {
+      "id": "o90",
+      "t": "card",
+      "n": "Bathroom",
+      "x": 808,
+      "y": 436,
+      "w": 308,
+      "h": 100,
+      "cfg": {
+        "type": "tile",
+        "entity": "ada_studio.media_player_walkman_1",
+        "name": "Bathroom",
+        "features": [
+          {
+            "type": "media-player-volume-slider"
+          }
+        ]
+      },
+      "pg": "p6",
+      "yaml": "type: \"tile\"\nentity: \"ada_studio.media_player_walkman_1\"\nname: \"Bathroom\"\nfeatures:\n  - type: \"media-player-volume-slider\"\n"
+    },
+    {
+      "id": "o91",
+      "t": "rect",
+      "n": "Bar",
+      "x": 427,
+      "y": 700,
+      "w": 426,
+      "h": 76,
+      "r": 24,
+      "sty": [
+        3
+      ]
+    },
+    {
+      "id": "o92",
+      "t": "rect",
+      "n": "Home button",
+      "x": 439,
+      "y": 712,
+      "w": 52,
+      "h": 52,
+      "r": 12,
+      "sty": [
+        8
+      ],
+      "g": "g2"
+    },
+    {
+      "id": "o93",
+      "t": "icon",
+      "n": "Home icon",
+      "x": 465,
+      "y": 738,
+      "size": 26,
+      "icon": "mdi:home",
+      "sty": [
+        4
+      ],
+      "g": "g2"
+    },
+    {
+      "id": "o94",
+      "t": "rect",
+      "n": "Lights button",
+      "x": 509,
+      "y": 712,
+      "w": 52,
+      "h": 52,
+      "r": 12,
+      "sty": [
+        9
+      ],
+      "g": "g4"
+    },
+    {
+      "id": "o95",
+      "t": "icon",
+      "n": "Lights icon",
+      "x": 535,
+      "y": 738,
+      "size": 26,
+      "icon": "mdi:lightbulb",
+      "sty": [
+        4
+      ],
+      "g": "g4"
+    },
+    {
+      "id": "o96",
+      "t": "rect",
+      "n": "Climate button",
+      "x": 579,
+      "y": 712,
+      "w": 52,
+      "h": 52,
+      "r": 12,
+      "sty": [
+        10
+      ],
+      "g": "g6"
+    },
+    {
+      "id": "o97",
+      "t": "icon",
+      "n": "Climate icon",
+      "x": 605,
+      "y": 738,
+      "size": 26,
+      "icon": "mdi:thermometer",
+      "sty": [
+        4
+      ],
+      "g": "g6"
+    },
+    {
+      "id": "o98",
+      "t": "rect",
+      "n": "Security button",
+      "x": 649,
+      "y": 712,
+      "w": 52,
+      "h": 52,
+      "r": 12,
+      "sty": [
+        11
+      ],
+      "g": "g8"
+    },
+    {
+      "id": "o99",
+      "t": "icon",
+      "n": "Security icon",
+      "x": 675,
+      "y": 738,
+      "size": 26,
+      "icon": "mdi:shield-home",
+      "sty": [
+        4
+      ],
+      "g": "g8"
+    },
+    {
+      "id": "o100",
+      "t": "rect",
+      "n": "Energy button",
+      "x": 719,
+      "y": 712,
+      "w": 52,
+      "h": 52,
+      "r": 12,
+      "sty": [
+        12
+      ],
+      "g": "g10"
+    },
+    {
+      "id": "o101",
+      "t": "icon",
+      "n": "Energy icon",
+      "x": 745,
+      "y": 738,
+      "size": 26,
+      "icon": "mdi:lightning-bolt",
+      "sty": [
+        4
+      ],
+      "g": "g10"
+    },
+    {
+      "id": "o102",
+      "t": "rect",
+      "n": "Media button",
+      "x": 789,
+      "y": 712,
+      "w": 52,
+      "h": 52,
+      "r": 12,
+      "sty": [
+        13
+      ],
+      "g": "g12"
+    },
+    {
+      "id": "o103",
+      "t": "icon",
+      "n": "Media icon",
+      "x": 815,
+      "y": 738,
+      "size": 26,
+      "icon": "mdi:music",
+      "sty": [
+        4
+      ],
+      "g": "g12"
+    },
+    {
+      "id": "o104",
+      "t": "rect",
+      "n": "Home bubble",
+      "x": 437,
+      "y": 664,
+      "w": 56,
+      "h": 26,
+      "r": 8,
+      "sty": [
+        5,
+        7
+      ],
+      "g": "g13"
+    },
+    {
+      "id": "o105",
+      "t": "label",
+      "n": "Home name",
+      "x": 465,
+      "y": 677,
+      "size": 13,
+      "txt": "Home",
+      "sty": [
+        6,
+        7
+      ],
+      "g": "g13"
+    },
+    {
+      "id": "o106",
+      "t": "rect",
+      "n": "Lights bubble",
+      "x": 499,
+      "y": 664,
+      "w": 72,
+      "h": 26,
+      "r": 8,
+      "sty": [
+        5,
+        7
+      ],
+      "g": "g14"
+    },
+    {
+      "id": "o107",
+      "t": "label",
+      "n": "Lights name",
+      "x": 535,
+      "y": 677,
+      "size": 13,
+      "txt": "Lights",
+      "sty": [
+        6,
+        7
+      ],
+      "g": "g14"
+    },
+    {
+      "id": "o108",
+      "t": "rect",
+      "n": "Climate bubble",
+      "x": 565,
+      "y": 664,
+      "w": 80,
+      "h": 26,
+      "r": 8,
+      "sty": [
+        5,
+        7
+      ],
+      "g": "g15"
+    },
+    {
+      "id": "o109",
+      "t": "label",
+      "n": "Climate name",
+      "x": 605,
+      "y": 677,
+      "size": 13,
+      "txt": "Climate",
+      "sty": [
+        6,
+        7
+      ],
+      "g": "g15"
+    },
+    {
+      "id": "o110",
+      "t": "rect",
+      "n": "Security bubble",
+      "x": 631,
+      "y": 664,
+      "w": 88,
+      "h": 26,
+      "r": 8,
+      "sty": [
+        5,
+        7
+      ],
+      "g": "g16"
+    },
+    {
+      "id": "o111",
+      "t": "label",
+      "n": "Security name",
+      "x": 675,
+      "y": 677,
+      "size": 13,
+      "txt": "Security",
+      "sty": [
+        6,
+        7
+      ],
+      "g": "g16"
+    },
+    {
+      "id": "o112",
+      "t": "rect",
+      "n": "Energy bubble",
+      "x": 709,
+      "y": 664,
+      "w": 72,
+      "h": 26,
+      "r": 8,
+      "sty": [
+        5,
+        7
+      ],
+      "g": "g17"
+    },
+    {
+      "id": "o113",
+      "t": "label",
+      "n": "Energy name",
+      "x": 745,
+      "y": 677,
+      "size": 13,
+      "txt": "Energy",
+      "sty": [
+        6,
+        7
+      ],
+      "g": "g17"
+    },
+    {
+      "id": "o114",
+      "t": "rect",
+      "n": "Media bubble",
+      "x": 783,
+      "y": 664,
+      "w": 64,
+      "h": 26,
+      "r": 8,
+      "sty": [
+        5,
+        7
+      ],
+      "g": "g18"
+    },
+    {
+      "id": "o115",
+      "t": "label",
+      "n": "Media name",
+      "x": 815,
+      "y": 677,
+      "size": 13,
+      "txt": "Media",
+      "sty": [
+        6,
+        7
+      ],
+      "g": "g18"
+    }
+  ],
+  "groups": [
+    {
+      "id": "g1",
+      "n": "Home"
+    },
+    {
+      "id": "g2",
+      "n": "Home · jump",
+      "p": "g1"
+    },
+    {
+      "id": "g3",
+      "n": "Lights"
+    },
+    {
+      "id": "g4",
+      "n": "Lights · jump",
+      "p": "g3"
+    },
+    {
+      "id": "g5",
+      "n": "Climate"
+    },
+    {
+      "id": "g6",
+      "n": "Climate · jump",
+      "p": "g5"
+    },
+    {
+      "id": "g7",
+      "n": "Security"
+    },
+    {
+      "id": "g8",
+      "n": "Security · jump",
+      "p": "g7"
+    },
+    {
+      "id": "g9",
+      "n": "Energy"
+    },
+    {
+      "id": "g10",
+      "n": "Energy · jump",
+      "p": "g9"
+    },
+    {
+      "id": "g11",
+      "n": "Media"
+    },
+    {
+      "id": "g12",
+      "n": "Media · jump",
+      "p": "g11"
+    },
+    {
+      "id": "g13",
+      "n": "Home name"
+    },
+    {
+      "id": "g14",
+      "n": "Lights name"
+    },
+    {
+      "id": "g15",
+      "n": "Climate name"
+    },
+    {
+      "id": "g16",
+      "n": "Security name"
+    },
+    {
+      "id": "g17",
+      "n": "Energy name"
+    },
+    {
+      "id": "g18",
+      "n": "Media name"
+    }
+  ],
+  "causes": [
+    {
+      "id": "c1",
+      "k": "tap"
+    },
+    {
+      "id": "c2",
+      "k": "page",
+      "pg": "p1"
+    },
+    {
+      "id": "c3",
+      "k": "page",
+      "pg": "p2"
+    },
+    {
+      "id": "c4",
+      "k": "page",
+      "pg": "p3"
+    },
+    {
+      "id": "c5",
+      "k": "page",
+      "pg": "p4"
+    },
+    {
+      "id": "c6",
+      "k": "page",
+      "pg": "p5"
+    },
+    {
+      "id": "c7",
+      "k": "page",
+      "pg": "p6"
+    }
+  ],
+  "rules": [
+    {
+      "id": "r6",
+      "n": "Home: page",
+      "c": [
+        "c1"
+      ],
+      "fx": [
+        {
+          "k": "act",
+          "a": "page",
+          "pg": "p1"
+        }
+      ],
+      "on": [
+        "g1"
+      ]
+    },
+    {
+      "id": "r13",
+      "n": "Lights: page",
+      "c": [
+        "c1"
+      ],
+      "fx": [
+        {
+          "k": "act",
+          "a": "page",
+          "pg": "p2"
+        }
+      ],
+      "on": [
+        "g3"
+      ]
+    },
+    {
+      "id": "r20",
+      "n": "Climate: page",
+      "c": [
+        "c1"
+      ],
+      "fx": [
+        {
+          "k": "act",
+          "a": "page",
+          "pg": "p3"
+        }
+      ],
+      "on": [
+        "g5"
+      ]
+    },
+    {
+      "id": "r27",
+      "n": "Security: page",
+      "c": [
+        "c1"
+      ],
+      "fx": [
+        {
+          "k": "act",
+          "a": "page",
+          "pg": "p4"
+        }
+      ],
+      "on": [
+        "g7"
+      ]
+    },
+    {
+      "id": "r34",
+      "n": "Energy: page",
+      "c": [
+        "c1"
+      ],
+      "fx": [
+        {
+          "k": "act",
+          "a": "page",
+          "pg": "p5"
+        }
+      ],
+      "on": [
+        "g9"
+      ]
+    },
+    {
+      "id": "r41",
+      "n": "Media: page",
+      "c": [
+        "c1"
+      ],
+      "fx": [
+        {
+          "k": "act",
+          "a": "page",
+          "pg": "p6"
+        }
+      ],
+      "on": [
+        "g11"
+      ]
+    },
+    {
+      "id": "r42",
+      "n": "Home: enlarge",
+      "c": [
+        "c2"
+      ],
+      "fx": [
+        {
+          "k": "look",
+          "sty": [
+            24
+          ]
+        }
+      ],
+      "on": [
+        "g1"
+      ]
+    },
+    {
+      "id": "r43",
+      "n": "Home: jump",
+      "c": [
+        "c2"
+      ],
+      "fx": [
+        {
+          "k": "look",
+          "sty": [
+            17
+          ]
+        }
+      ],
+      "on": [
+        "g2"
+      ]
+    },
+    {
+      "id": "r44",
+      "n": "Home: wave",
+      "c": [
+        "c2"
+      ],
+      "fx": [
+        {
+          "k": "look",
+          "sty": [
+            18
+          ]
+        }
+      ],
+      "on": [
+        "g4"
+      ]
+    },
+    {
+      "id": "r45",
+      "n": "Home: name",
+      "c": [
+        "c2"
+      ],
+      "fx": [
+        {
+          "k": "look",
+          "sty": [
+            19
+          ]
+        }
+      ],
+      "on": [
+        "o104",
+        "o105"
+      ]
+    },
+    {
+      "id": "r46",
+      "n": "Lights: enlarge",
+      "c": [
+        "c3"
+      ],
+      "fx": [
+        {
+          "k": "look",
+          "sty": [
+            23
+          ]
+        }
+      ],
+      "on": [
+        "g3"
+      ]
+    },
+    {
+      "id": "r47",
+      "n": "Lights: jump",
+      "c": [
+        "c3"
+      ],
+      "fx": [
+        {
+          "k": "look",
+          "sty": [
+            17
+          ]
+        }
+      ],
+      "on": [
+        "g4"
+      ]
+    },
+    {
+      "id": "r48",
+      "n": "Lights: wave",
+      "c": [
+        "c3"
+      ],
+      "fx": [
+        {
+          "k": "look",
+          "sty": [
+            18
+          ]
+        }
+      ],
+      "on": [
+        "g2",
+        "g6"
+      ]
+    },
+    {
+      "id": "r49",
+      "n": "Lights: name",
+      "c": [
+        "c3"
+      ],
+      "fx": [
+        {
+          "k": "look",
+          "sty": [
+            19
+          ]
+        }
+      ],
+      "on": [
+        "o106",
+        "o107"
+      ]
+    },
+    {
+      "id": "r50",
+      "n": "Climate: enlarge",
+      "c": [
+        "c4"
+      ],
+      "fx": [
+        {
+          "k": "look",
+          "sty": [
+            23
+          ]
+        }
+      ],
+      "on": [
+        "g5"
+      ]
+    },
+    {
+      "id": "r51",
+      "n": "Climate: jump",
+      "c": [
+        "c4"
+      ],
+      "fx": [
+        {
+          "k": "look",
+          "sty": [
+            17
+          ]
+        }
+      ],
+      "on": [
+        "g6"
+      ]
+    },
+    {
+      "id": "r52",
+      "n": "Climate: wave",
+      "c": [
+        "c4"
+      ],
+      "fx": [
+        {
+          "k": "look",
+          "sty": [
+            18
+          ]
+        }
+      ],
+      "on": [
+        "g4",
+        "g8"
+      ]
+    },
+    {
+      "id": "r53",
+      "n": "Climate: name",
+      "c": [
+        "c4"
+      ],
+      "fx": [
+        {
+          "k": "look",
+          "sty": [
+            19
+          ]
+        }
+      ],
+      "on": [
+        "o108",
+        "o109"
+      ]
+    },
+    {
+      "id": "r54",
+      "n": "Security: enlarge",
+      "c": [
+        "c5"
+      ],
+      "fx": [
+        {
+          "k": "look",
+          "sty": [
+            23
+          ]
+        }
+      ],
+      "on": [
+        "g7"
+      ]
+    },
+    {
+      "id": "r55",
+      "n": "Security: jump",
+      "c": [
+        "c5"
+      ],
+      "fx": [
+        {
+          "k": "look",
+          "sty": [
+            17
+          ]
+        }
+      ],
+      "on": [
+        "g8"
+      ]
+    },
+    {
+      "id": "r56",
+      "n": "Security: wave",
+      "c": [
+        "c5"
+      ],
+      "fx": [
+        {
+          "k": "look",
+          "sty": [
+            18
+          ]
+        }
+      ],
+      "on": [
+        "g6",
+        "g10"
+      ]
+    },
+    {
+      "id": "r57",
+      "n": "Security: name",
+      "c": [
+        "c5"
+      ],
+      "fx": [
+        {
+          "k": "look",
+          "sty": [
+            19
+          ]
+        }
+      ],
+      "on": [
+        "o110",
+        "o111"
+      ]
+    },
+    {
+      "id": "r58",
+      "n": "Energy: enlarge",
+      "c": [
+        "c6"
+      ],
+      "fx": [
+        {
+          "k": "look",
+          "sty": [
+            23
+          ]
+        }
+      ],
+      "on": [
+        "g9"
+      ]
+    },
+    {
+      "id": "r59",
+      "n": "Energy: jump",
+      "c": [
+        "c6"
+      ],
+      "fx": [
+        {
+          "k": "look",
+          "sty": [
+            17
+          ]
+        }
+      ],
+      "on": [
+        "g10"
+      ]
+    },
+    {
+      "id": "r60",
+      "n": "Energy: wave",
+      "c": [
+        "c6"
+      ],
+      "fx": [
+        {
+          "k": "look",
+          "sty": [
+            18
+          ]
+        }
+      ],
+      "on": [
+        "g8",
+        "g12"
+      ]
+    },
+    {
+      "id": "r61",
+      "n": "Energy: name",
+      "c": [
+        "c6"
+      ],
+      "fx": [
+        {
+          "k": "look",
+          "sty": [
+            19
+          ]
+        }
+      ],
+      "on": [
+        "o112",
+        "o113"
+      ]
+    },
+    {
+      "id": "r62",
+      "n": "Media: enlarge",
+      "c": [
+        "c7"
+      ],
+      "fx": [
+        {
+          "k": "look",
+          "sty": [
+            23
+          ]
+        }
+      ],
+      "on": [
+        "g11"
+      ]
+    },
+    {
+      "id": "r63",
+      "n": "Media: jump",
+      "c": [
+        "c7"
+      ],
+      "fx": [
+        {
+          "k": "look",
+          "sty": [
+            17
+          ]
+        }
+      ],
+      "on": [
+        "g12"
+      ]
+    },
+    {
+      "id": "r64",
+      "n": "Media: wave",
+      "c": [
+        "c7"
+      ],
+      "fx": [
+        {
+          "k": "look",
+          "sty": [
+            18
+          ]
+        }
+      ],
+      "on": [
+        "g10"
+      ]
+    },
+    {
+      "id": "r65",
+      "n": "Media: name",
+      "c": [
+        "c7"
+      ],
+      "fx": [
+        {
+          "k": "look",
+          "sty": [
+            19
+          ]
+        }
+      ],
+      "on": [
+        "o114",
+        "o115"
+      ]
+    }
+  ],
+  "guides": [],
+  "bgFit": "cover",
+  "ver": 57052,
+  "sides": 6,
+  "so": 1,
+  "pages": [
+    {
+      "id": "p1",
+      "n": "Home",
+      "a": [
+        0,
+        0,
+        1280,
+        680
+      ],
+      "ad": "home"
+    },
+    {
+      "id": "p2",
+      "n": "Lights",
+      "a": [
+        0,
+        0,
+        1280,
+        680
+      ],
+      "ad": "lights"
+    },
+    {
+      "id": "p3",
+      "n": "Climate",
+      "a": [
+        0,
+        0,
+        1280,
+        680
+      ],
+      "ad": "climate"
+    },
+    {
+      "id": "p4",
+      "n": "Security",
+      "a": [
+        0,
+        0,
+        1280,
+        680
+      ],
+      "ad": "security"
+    },
+    {
+      "id": "p5",
+      "n": "Energy",
+      "a": [
+        0,
+        0,
+        1280,
+        680
+      ],
+      "ad": "energy"
+    },
+    {
+      "id": "p6",
+      "n": "Media",
+      "a": [
+        0,
+        0,
+        1280,
+        680
+      ],
+      "ad": "media"
+    }
+  ],
+  "styles": [
+    {
+      "id": 1,
+      "n": "Title",
+      "use": [
+        "f",
+        "o"
+      ],
+      "st": {
+        "n": {
+          "op": 1,
+          "f": "c",
+          "fc": "#ffffff",
+          "fa": 1
+        }
+      },
+      "tx": {
+        "fs": 28,
+        "fw": 600,
+        "ta": "start"
+      }
+    },
+    {
+      "id": 2,
+      "n": "Section",
+      "use": [
+        "f",
+        "o"
+      ],
+      "st": {
+        "n": {
+          "op": 1,
+          "f": "c",
+          "fc": "#ffffff",
+          "fa": 0.85
+        }
+      },
+      "tx": {
+        "fs": 18,
+        "fw": 600,
+        "ta": "start"
+      }
+    },
+    {
+      "id": 3,
+      "n": "Bar",
+      "use": [
+        "f",
+        "b",
+        "g"
+      ],
+      "st": {
+        "n": {
+          "f": "c",
+          "fc": "#2a2e37",
+          "fa": 0.82,
+          "sc": "#ffffff",
+          "sa": 0.12,
+          "sw": 1,
+          "g": 1,
+          "gc": "#000000",
+          "ga": 0.5,
+          "gb": 20,
+          "gx": 0,
+          "gy": 6
+        }
+      }
+    },
+    {
+      "id": 4,
+      "n": "White icon",
+      "use": [
+        "f"
+      ],
+      "st": {
+        "n": {
+          "f": "c",
+          "fc": "#ffffff",
+          "fa": 1
+        }
+      }
+    },
+    {
+      "id": 5,
+      "n": "Bubble",
+      "use": [
+        "f"
+      ],
+      "st": {
+        "n": {
+          "f": "c",
+          "fc": "#f1f3f5",
+          "fa": 0.95
+        }
+      }
+    },
+    {
+      "id": 6,
+      "n": "Name in bubble",
+      "use": [
+        "f"
+      ],
+      "st": {
+        "n": {
+          "f": "c",
+          "fc": "#111318",
+          "fa": 1
+        }
+      },
+      "tx": {
+        "fs": 13,
+        "fw": 500
+      }
+    },
+    {
+      "id": 7,
+      "n": "Hidden",
+      "use": [
+        "o"
+      ],
+      "st": {
+        "n": {
+          "op": 0
+        }
+      }
+    },
+    {
+      "id": 8,
+      "n": "Home button",
+      "use": [
+        "f"
+      ],
+      "st": {
+        "n": {
+          "f": "l",
+          "fc": "#42a5f5",
+          "fa": 1,
+          "fc2": "#1565c0",
+          "fa2": 1,
+          "fg": 90
+        }
+      }
+    },
+    {
+      "id": 9,
+      "n": "Lights button",
+      "use": [
+        "f"
+      ],
+      "st": {
+        "n": {
+          "f": "l",
+          "fc": "#ffca28",
+          "fa": 1,
+          "fc2": "#f57c00",
+          "fa2": 1,
+          "fg": 90
+        }
+      }
+    },
+    {
+      "id": 10,
+      "n": "Climate button",
+      "use": [
+        "f"
+      ],
+      "st": {
+        "n": {
+          "f": "l",
+          "fc": "#4dd0e1",
+          "fa": 1,
+          "fc2": "#00838f",
+          "fa2": 1,
+          "fg": 90
+        }
+      }
+    },
+    {
+      "id": 11,
+      "n": "Security button",
+      "use": [
+        "f"
+      ],
+      "st": {
+        "n": {
+          "f": "l",
+          "fc": "#66bb6a",
+          "fa": 1,
+          "fc2": "#2e7d32",
+          "fa2": 1,
+          "fg": 90
+        }
+      }
+    },
+    {
+      "id": 12,
+      "n": "Energy button",
+      "use": [
+        "f"
+      ],
+      "st": {
+        "n": {
+          "f": "l",
+          "fc": "#ba68c8",
+          "fa": 1,
+          "fc2": "#6a1b9a",
+          "fa2": 1,
+          "fg": 90
+        }
+      }
+    },
+    {
+      "id": 13,
+      "n": "Media button",
+      "use": [
+        "f"
+      ],
+      "st": {
+        "n": {
+          "f": "l",
+          "fc": "#ef5350",
+          "fa": 1,
+          "fc2": "#ad1457",
+          "fa2": 1,
+          "fg": 90
+        }
+      }
+    },
+    {
+      "id": 14,
+      "n": "Active",
+      "k": "a",
+      "use": [
+        "a"
+      ],
+      "anim": "custom",
+      "pp": [
+        "ms"
+      ],
+      "ps": [
+        {
+          "t": 0,
+          "ms": 100
+        },
+        {
+          "t": 100,
+          "ms": 132
+        }
+      ],
+      "ad": 0.35,
+      "ar": 1,
+      "ae": "ease-out",
+      "st": {
+        "n": {
+          "op": 1
+        }
+      },
+      "pv": "b"
+    },
+    {
+      "id": 15,
+      "n": "Home enlarged",
+      "use": [
+        "x"
+      ],
+      "st": {
+        "n": {
+          "ms": 132,
+          "my": -8.3
+        }
+      }
+    },
+    {
+      "id": 16,
+      "n": "Active (Home)",
+      "k": "a",
+      "use": [
+        "a"
+      ],
+      "anim": "custom",
+      "pp": [
+        "ms",
+        "my"
+      ],
+      "ps": [
+        {
+          "t": 0,
+          "ms": 132,
+          "my": -8.3
+        },
+        {
+          "t": 100,
+          "ms": 100,
+          "my": 0
+        }
+      ],
+      "ad": 0.35,
+      "ar": 1,
+      "ae": "ease-out",
+      "st": {
+        "n": {
+          "op": 1
+        }
+      }
+    },
+    {
+      "id": 17,
+      "n": "Jump",
+      "k": "a",
+      "use": [
+        "a"
+      ],
+      "anim": "custom",
+      "pp": [
+        "my"
+      ],
+      "ps": [
+        {
+          "t": 0,
+          "my": 0
+        },
+        {
+          "t": 30,
+          "my": -22
+        },
+        {
+          "t": 55,
+          "my": 0
+        },
+        {
+          "t": 75,
+          "my": -9
+        },
+        {
+          "t": 100,
+          "my": 0
+        }
+      ],
+      "ad": 0.6,
+      "ar": 1,
+      "ae": "ease-out",
+      "st": {
+        "n": {
+          "op": 1
+        }
+      }
+    },
+    {
+      "id": 18,
+      "n": "Wave",
+      "k": "a",
+      "use": [
+        "a"
+      ],
+      "anim": "custom",
+      "pp": [
+        "ms"
+      ],
+      "ps": [
+        {
+          "t": 0,
+          "ms": 100
+        },
+        {
+          "t": 35,
+          "ms": 118
+        },
+        {
+          "t": 100,
+          "ms": 100
+        }
+      ],
+      "ad": 0.5,
+      "ar": 1,
+      "ae": "ease-out",
+      "st": {
+        "n": {
+          "op": 1
+        }
+      },
+      "pv": "b"
+    },
+    {
+      "id": 19,
+      "n": "Name",
+      "k": "a",
+      "use": [
+        "a"
+      ],
+      "anim": "custom",
+      "pp": [
+        "op"
+      ],
+      "ps": [
+        {
+          "t": 0,
+          "op": 0
+        },
+        {
+          "t": 15,
+          "op": 1
+        },
+        {
+          "t": 75,
+          "op": 1
+        },
+        {
+          "t": 100,
+          "op": 0
+        }
+      ],
+      "ad": 1.2,
+      "ar": 1,
+      "ae": "ease-out",
+      "st": {
+        "n": {
+          "op": 1
+        }
+      }
+    },
+    {
+      "id": 20,
+      "n": "Trans",
+      "dur": 300,
+      "ease": "ease",
+      "anim": "",
+      "hov": true,
+      "use": [
+        "o"
+      ],
+      "st": {
+        "n": {
+          "f": "c",
+          "fc": "#4a90d9",
+          "fa": 0.25,
+          "fc2": "#ffffff",
+          "fa2": 0,
+          "fg": 90,
+          "sc": "#4a90d9",
+          "sa": 0.8,
+          "sw": 2,
+          "sd": "",
+          "g": false,
+          "gc": "#4a90d9",
+          "ga": 0.8,
+          "gb": 8,
+          "gx": 0,
+          "gy": 0,
+          "op": 0.3,
+          "mx": 0,
+          "my": 0,
+          "mr": 0,
+          "ms": 100
+        }
+      }
+    },
+    {
+      "id": 21,
+      "n": "Windows",
+      "dur": 300,
+      "ease": "ease",
+      "anim": "",
+      "hov": true,
+      "use": [
+        "f",
+        "b",
+        "m"
+      ],
+      "st": {
+        "n": {
+          "f": "ps",
+          "fc": "#000000",
+          "fa": 0.35,
+          "fc2": "#ffffff",
+          "fa2": 0.2,
+          "fg": 45,
+          "sc": "#4a90d9",
+          "sa": 0.75,
+          "sw": 2,
+          "sd": "",
+          "g": false,
+          "gc": "#4a90d9",
+          "ga": 0.8,
+          "gb": 8,
+          "gx": 0,
+          "gy": 0,
+          "op": 1,
+          "mx": 0,
+          "my": 0,
+          "mr": 0,
+          "ms": 100,
+          "bm": "hard-light",
+          "pw": 12,
+          "pz": 15
+        }
+      }
+    },
+    {
+      "id": 22,
+      "n": "Glass panel",
+      "dur": 300,
+      "ease": "ease",
+      "anim": "",
+      "hov": false,
+      "use": [
+        "f",
+        "b",
+        "g",
+        "o"
+      ],
+      "st": {
+        "n": {
+          "f": "i",
+          "ip": "immagini/vetro-scuro.jpg",
+          "fc": "#ffffff",
+          "fa": 1,
+          "sc": "#ffffff",
+          "sa": 0.28,
+          "sw": 1.5,
+          "sd": "",
+          "g": true,
+          "gc": "#0b0620",
+          "ga": 0.55,
+          "gb": 28,
+          "gx": 0,
+          "gy": 12,
+          "op": 0.92,
+          "iw": 1728,
+          "ih": 1296,
+          "fc2": "#ffffff",
+          "fa2": 0,
+          "fg": 90,
+          "mx": 0,
+          "my": 0,
+          "mr": 0,
+          "ms": 100
+        }
+      }
+    },
+    {
+      "id": 23,
+      "n": "Active page",
+      "dur": 350,
+      "ease": "ease",
+      "use": [
+        "x",
+        "t"
+      ],
+      "st": {
+        "n": {
+          "ms": 132
+        }
+      }
+    },
+    {
+      "id": 24,
+      "n": "Active page (Home)",
+      "dur": 350,
+      "ease": "ease",
+      "use": [
+        "x",
+        "t"
+      ],
+      "st": {
+        "n": {
+          "ms": 132,
+          "my": -8.3
+        }
+      }
+    }
+  ],
+  "need": 8,
+  "pub": 57050,
+  "bgs": [
+    {
+      "id": "b1",
+      "n": "Layer 1",
+      "p": "immagini/home_assistant_header_shapes-topaz-enhance-2x-scaled.jpg",
+      "sty": [
+        20
+      ]
+    }
+  ],
+  "ptr": {
+    "tt": "carousel",
+    "tdir": "m",
+    "tpr": "strong",
+    "tgp": "2"
+  },
+  "ph": [
+    {
+      "e": "ada_studio.alarm_control_panel_security_1",
+      "d": "alarm_control_panel",
+      "s": "disarmed",
+      "n": "Alarm control panel security 1"
+    },
+    {
+      "e": "ada_studio.binary_sensor_basement_floor_wet_1",
+      "d": "binary_sensor",
+      "s": "off",
+      "n": "Binary sensor basement floor wet 1",
+      "a": {
+        "device_class": "moisture"
+      }
+    },
+    {
+      "e": "ada_studio.binary_sensor_bathroom_window_1",
+      "d": "binary_sensor",
+      "s": "on",
+      "n": "Binary sensor bathroom window 1",
+      "a": {
+        "device_class": "window"
+      }
+    },
+    {
+      "e": "ada_studio.binary_sensor_bedroom_windows_1",
+      "d": "binary_sensor",
+      "s": "off",
+      "n": "Binary sensor bedroom windows 1",
+      "a": {
+        "device_class": "window"
+      }
+    },
+    {
+      "e": "ada_studio.binary_sensor_driveway_1",
+      "d": "binary_sensor",
+      "s": "off",
+      "n": "Binary sensor driveway 1",
+      "a": {
+        "device_class": "motion"
+      }
+    },
+    {
+      "e": "ada_studio.binary_sensor_front_door_1",
+      "d": "binary_sensor",
+      "s": "off",
+      "n": "Binary sensor front door 1",
+      "a": {
+        "device_class": "door"
+      }
+    },
+    {
+      "e": "ada_studio.binary_sensor_garage_door_1",
+      "d": "binary_sensor",
+      "s": "off",
+      "n": "Binary sensor garage door 1",
+      "a": {
+        "device_class": "garage_door"
+      }
+    },
+    {
+      "e": "ada_studio.binary_sensor_living_room_french_window_1",
+      "d": "binary_sensor",
+      "s": "off",
+      "n": "Binary sensor living room french window 1",
+      "a": {
+        "device_class": "window"
+      }
+    },
+    {
+      "e": "ada_studio.binary_sensor_movement_backyard_1",
+      "d": "binary_sensor",
+      "s": "on",
+      "n": "Binary sensor movement backyard 1",
+      "a": {
+        "device_class": "motion"
+      }
+    },
+    {
+      "e": "ada_studio.binary_sensor_windows_1",
+      "d": "binary_sensor",
+      "s": "off",
+      "n": "Binary sensor windows 1",
+      "a": {
+        "device_class": "window"
+      }
+    },
+    {
+      "e": "ada_studio.climate_heatpump_1",
+      "d": "climate",
+      "s": "heat",
+      "n": "Climate heatpump 1"
+    },
+    {
+      "e": "ada_studio.climate_hvac_1",
+      "d": "climate",
+      "s": "cool",
+      "n": "Climate hvac 1"
+    },
+    {
+      "e": "ada_studio.cover_living_room_window_1",
+      "d": "cover",
+      "s": "open",
+      "n": "Cover living room window 1"
+    },
+    {
+      "e": "ada_studio.fan_living_room_fan_1",
+      "d": "fan",
+      "s": "off",
+      "n": "Fan living room fan 1"
+    },
+    {
+      "e": "ada_studio.light_bedroom_1",
+      "d": "light",
+      "s": "off",
+      "n": "Light bedroom 1",
+      "a": {
+        "supported_color_modes": [
+          "brightness"
+        ]
+      }
+    },
+    {
+      "e": "ada_studio.light_bedside_lamp_1",
+      "d": "light",
+      "s": "off",
+      "n": "Light bedside lamp 1",
+      "a": {
+        "supported_color_modes": [
+          "brightness"
+        ]
+      }
+    },
+    {
+      "e": "ada_studio.light_chandelier_1",
+      "d": "light",
+      "s": "off",
+      "n": "Light chandelier 1",
+      "a": {
+        "supported_color_modes": [
+          "brightness"
+        ]
+      }
+    },
+    {
+      "e": "ada_studio.light_cooker_hood_1",
+      "d": "light",
+      "s": "off",
+      "n": "Light cooker hood 1",
+      "a": {
+        "supported_color_modes": [
+          "brightness"
+        ]
+      }
+    },
+    {
+      "e": "ada_studio.light_floor_lamp_1",
+      "d": "light",
+      "s": "off",
+      "n": "Light floor lamp 1",
+      "a": {
+        "supported_color_modes": [
+          "brightness"
+        ]
+      }
+    },
+    {
+      "e": "ada_studio.light_garden_1",
+      "d": "light",
+      "s": "off",
+      "n": "Light garden 1",
+      "a": {
+        "supported_color_modes": [
+          "brightness"
+        ]
+      }
+    },
+    {
+      "e": "ada_studio.light_hallway_1",
+      "d": "light",
+      "s": "off",
+      "n": "Light hallway 1",
+      "a": {
+        "supported_color_modes": [
+          "brightness"
+        ]
+      }
+    },
+    {
+      "e": "ada_studio.light_kitchen_1",
+      "d": "light",
+      "s": "off",
+      "n": "Light kitchen 1",
+      "a": {
+        "supported_color_modes": [
+          "brightness"
+        ]
+      }
+    },
+    {
+      "e": "ada_studio.light_kitchen_island_1",
+      "d": "light",
+      "s": "off",
+      "n": "Light kitchen island 1",
+      "a": {
+        "supported_color_modes": [
+          "brightness"
+        ]
+      }
+    },
+    {
+      "e": "ada_studio.light_led_strip_1",
+      "d": "light",
+      "s": "off",
+      "n": "Light led strip 1",
+      "a": {
+        "supported_color_modes": [
+          "brightness"
+        ]
+      }
+    },
+    {
+      "e": "ada_studio.light_living_room_1",
+      "d": "light",
+      "s": "off",
+      "n": "Light living room 1",
+      "a": {
+        "supported_color_modes": [
+          "brightness"
+        ]
+      }
+    },
+    {
+      "e": "ada_studio.light_wall_cabinets_1",
+      "d": "light",
+      "s": "off",
+      "n": "Light wall cabinets 1",
+      "a": {
+        "supported_color_modes": [
+          "brightness"
+        ]
+      }
+    },
+    {
+      "e": "ada_studio.lock_front_door_1",
+      "d": "lock",
+      "s": "locked",
+      "n": "Lock front door 1"
+    },
+    {
+      "e": "ada_studio.lock_kitchen_door_1",
+      "d": "lock",
+      "s": "unlocked",
+      "n": "Lock kitchen door 1"
+    },
+    {
+      "e": "ada_studio.media_player_bedroom_1",
+      "d": "media_player",
+      "s": "playing",
+      "n": "Media player bedroom 1"
+    },
+    {
+      "e": "ada_studio.media_player_browse_1",
+      "d": "media_player",
+      "s": "playing",
+      "n": "Media player browse 1"
+    },
+    {
+      "e": "ada_studio.media_player_kitchen_1",
+      "d": "media_player",
+      "s": "playing",
+      "n": "Media player kitchen 1"
+    },
+    {
+      "e": "ada_studio.media_player_living_room_1",
+      "d": "media_player",
+      "s": "playing",
+      "n": "Media player living room 1"
+    },
+    {
+      "e": "ada_studio.media_player_lounge_room_1",
+      "d": "media_player",
+      "s": "playing",
+      "n": "Media player lounge room 1",
+      "a": {
+        "device_class": "tv"
+      }
+    },
+    {
+      "e": "ada_studio.media_player_walkman_1",
+      "d": "media_player",
+      "s": "playing",
+      "n": "Media player walkman 1"
+    },
+    {
+      "e": "ada_studio.person_1",
+      "d": "person",
+      "s": "home",
+      "n": "Person 1"
+    },
+    {
+      "e": "ada_studio.scene_cinema_1",
+      "d": "scene",
+      "s": "unknown",
+      "n": "Scene cinema 1"
+    },
+    {
+      "e": "ada_studio.scene_day_1",
+      "d": "scene",
+      "s": "unknown",
+      "n": "Scene day 1"
+    },
+    {
+      "e": "ada_studio.scene_evening_1",
+      "d": "scene",
+      "s": "unknown",
+      "n": "Scene evening 1"
+    },
+    {
+      "e": "ada_studio.scene_night_1",
+      "d": "scene",
+      "s": "unknown",
+      "n": "Scene night 1"
+    },
+    {
+      "e": "ada_studio.scene_relax_1",
+      "d": "scene",
+      "s": "unknown",
+      "n": "Scene relax 1"
+    },
+    {
+      "e": "ada_studio.script_evening_jazz_1",
+      "d": "script",
+      "s": "off",
+      "n": "Script evening jazz 1"
+    },
+    {
+      "e": "ada_studio.script_podcast_1",
+      "d": "script",
+      "s": "off",
+      "n": "Script podcast 1"
+    },
+    {
+      "e": "ada_studio.script_radio_1",
+      "d": "script",
+      "s": "off",
+      "n": "Script radio 1"
+    },
+    {
+      "e": "ada_studio.sensor_battery_level_1",
+      "d": "sensor",
+      "s": "64.0",
+      "n": "Sensor battery level 1",
+      "a": {
+        "unit_of_measurement": "%",
+        "device_class": "battery"
+      }
+    },
+    {
+      "e": "ada_studio.sensor_battery_power_1",
+      "d": "sensor",
+      "s": "-1.73",
+      "n": "Sensor battery power 1",
+      "a": {
+        "unit_of_measurement": "kW",
+        "device_class": "power"
+      }
+    },
+    {
+      "e": "ada_studio.sensor_bedroom_temperature_1",
+      "d": "sensor",
+      "s": "19.8",
+      "n": "Sensor bedroom temperature 1",
+      "a": {
+        "unit_of_measurement": "°C",
+        "device_class": "temperature"
+      }
+    },
+    {
+      "e": "ada_studio.sensor_boiler_flow_1",
+      "d": "sensor",
+      "s": "46.5",
+      "n": "Sensor boiler flow 1",
+      "a": {
+        "unit_of_measurement": "°C",
+        "device_class": "temperature"
+      }
+    },
+    {
+      "e": "ada_studio.sensor_car_charge_1",
+      "d": "sensor",
+      "s": "82.0",
+      "n": "Sensor car charge 1",
+      "a": {
+        "unit_of_measurement": "%",
+        "device_class": "battery"
+      }
+    },
+    {
+      "e": "ada_studio.sensor_carbon_dioxide_1",
+      "d": "sensor",
+      "s": "54",
+      "n": "Sensor carbon dioxide 1",
+      "a": {
+        "unit_of_measurement": "ppm",
+        "device_class": "carbon_dioxide"
+      }
+    },
+    {
+      "e": "ada_studio.sensor_cost_today_1",
+      "d": "sensor",
+      "s": "2.41",
+      "n": "Sensor cost today 1",
+      "a": {
+        "unit_of_measurement": "€",
+        "device_class": "monetary"
+      }
+    },
+    {
+      "e": "ada_studio.sensor_gas_today_1",
+      "d": "sensor",
+      "s": "2.3",
+      "n": "Sensor gas today 1",
+      "a": {
+        "unit_of_measurement": "m³",
+        "device_class": "gas"
+      }
+    },
+    {
+      "e": "ada_studio.sensor_grid_energy_1",
+      "d": "sensor",
+      "s": "2310.0",
+      "n": "Sensor grid energy 1",
+      "a": {
+        "unit_of_measurement": "kWh",
+        "device_class": "energy"
+      }
+    },
+    {
+      "e": "ada_studio.sensor_grid_power_1",
+      "d": "sensor",
+      "s": "0.37",
+      "n": "Sensor grid power 1",
+      "a": {
+        "unit_of_measurement": "kW",
+        "device_class": "power"
+      }
+    },
+    {
+      "e": "ada_studio.sensor_home_consumption_1",
+      "d": "sensor",
+      "s": "1.84",
+      "n": "Sensor home consumption 1",
+      "a": {
+        "unit_of_measurement": "kW",
+        "device_class": "power"
+      }
+    },
+    {
+      "e": "ada_studio.sensor_living_room_temperature_1",
+      "d": "sensor",
+      "s": "21.4",
+      "n": "Sensor living room temperature 1",
+      "a": {
+        "unit_of_measurement": "°C",
+        "device_class": "temperature"
+      }
+    },
+    {
+      "e": "ada_studio.sensor_outside_humidity_1",
+      "d": "sensor",
+      "s": "54",
+      "n": "Sensor outside humidity 1",
+      "a": {
+        "unit_of_measurement": "%",
+        "device_class": "humidity"
+      }
+    },
+    {
+      "e": "ada_studio.sensor_outside_temperature_1",
+      "d": "sensor",
+      "s": "15.6",
+      "n": "Sensor outside temperature 1",
+      "a": {
+        "unit_of_measurement": "°C",
+        "device_class": "temperature"
+      }
+    },
+    {
+      "e": "ada_studio.sensor_self_consumption_1",
+      "d": "sensor",
+      "s": "80.0",
+      "n": "Sensor self consumption 1",
+      "a": {
+        "unit_of_measurement": "%"
+      }
+    },
+    {
+      "e": "ada_studio.sensor_solar_energy_1",
+      "d": "sensor",
+      "s": "1520.0",
+      "n": "Sensor solar energy 1",
+      "a": {
+        "unit_of_measurement": "kWh",
+        "device_class": "energy"
+      }
+    },
+    {
+      "e": "ada_studio.sensor_solar_power_1",
+      "d": "sensor",
+      "s": "3.2",
+      "n": "Sensor solar power 1",
+      "a": {
+        "unit_of_measurement": "kW",
+        "device_class": "power"
+      }
+    },
+    {
+      "e": "ada_studio.sensor_tariff_1",
+      "d": "sensor",
+      "s": "Off-peak",
+      "n": "Sensor tariff 1"
+    },
+    {
+      "e": "ada_studio.sensor_washing_machine_end_1",
+      "d": "sensor",
+      "s": "Done in 25 min",
+      "n": "Sensor washing machine end 1"
+    },
+    {
+      "e": "ada_studio.sensor_washing_machine_power_1",
+      "d": "sensor",
+      "s": "450.0",
+      "n": "Sensor washing machine power 1",
+      "a": {
+        "unit_of_measurement": "W",
+        "device_class": "power"
+      }
+    },
+    {
+      "e": "ada_studio.vacuum_1",
+      "d": "vacuum",
+      "s": "docked",
+      "n": "Vacuum 1"
+    },
+    {
+      "e": "ada_studio.weather_1",
+      "d": "weather",
+      "s": "sunny",
+      "n": "Weather 1"
+    }
+  ]
+}

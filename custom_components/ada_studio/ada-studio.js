@@ -1,4 +1,4 @@
-const MODULE_VERSION = '1.0.0-beta.3';
+const MODULE_VERSION = '1.0.0-beta.4';
 const BLENDS = ['normal','lighten','screen','plus-lighter','overlay','soft-light','hard-light','multiply','difference'];
 const ALIGNS = [
   ['start','Align left','M3,3H21V5H3V3M3,7H15V9H3V7M3,11H21V13H3V11M3,15H15V17H3V15M3,19H21V21H3V19Z'],
@@ -288,6 +288,7 @@ header #pgn{overflow:hidden;text-overflow:ellipsis}
 #plist .pr .sb{font-size:11px;color:var(--ink2)}
 /* Progetto della 1.x: non si apre, si può solo eliminare. */
 #plist .pr.v1{cursor:default;opacity:.75}
+#plist .prs{margin-top:6px;padding:8px 6px 3px;border-top:1px solid var(--line);font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--ink2)}
 #plist .pr.v1 .btn{flex:0 0 auto;padding:3px 9px}
 #pname{font-family:var(--mono);font-size:13px;word-break:break-all}
 /* Versione in fondo al pannello Project (3.24.1; prima in fondo all'elenco dei progetti); in arancione se il server ne ha un'altra. */
@@ -686,9 +687,9 @@ header #pgn{overflow:hidden;text-overflow:ellipsis}
 #pkl .o.ph b,#pkl .o.ph small{color:var(--ph)}
 #pkl .o .pke{flex:0 0 auto;background:none;border:0;color:var(--ph);cursor:pointer;font-size:14px;padding:2px 6px}
 #pkl .phe{padding:6px 6px 8px}
-#pkl .phh{display:flex;align-items:center;gap:8px;margin-bottom:8px}
-#pkl .phh b{color:var(--ph);font:13px var(--mono);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-#pkl .phe textarea{width:100%;box-sizing:border-box;resize:vertical;font:12px var(--mono)}
+#pkl .phh,#enwr .phh{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+#pkl .phh b,#enwr .phh b{color:var(--ph);font:13px var(--mono);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#pkl .phe textarea,#enwr .phe textarea{width:100%;box-sizing:border-box;resize:vertical;font:12px var(--mono)}
 input[data-pick="ents"][value^="ada_studio."]{color:var(--ph)}
 @media (pointer:coarse){#pkl .o{min-height:44px}#pkd button{padding:6px 12px;font-size:13px}}
 /* Campo di percorso con il pulsante Sfoglia accanto. */
@@ -739,7 +740,69 @@ input[data-pick="ents"][value^="ada_studio."]{color:var(--ph)}
 .twh{fill:var(--accent);fill-opacity:.25;stroke:var(--accent);stroke-width:2;vector-effect:non-scaling-stroke;pointer-events:none}
 .twn{fill:none;stroke:var(--ink2);stroke-width:1;stroke-dasharray:3 3;vector-effect:non-scaling-stroke;pointer-events:none}
 #cv.twp [data-i]{cursor:pointer}
-#tgw[hidden],#erd[hidden],#gal[hidden],#cde[hidden],#galr[hidden],#galp[hidden],#galq[hidden],#galup[hidden],#galf{display:none}
+/* Finestra Entities (3.45.0): a comparsa sopra tutto il pannello, due colonne; a sinistra le entità del progetto, a destra
+   quelle di HA del dominio della riga scelta. */
+#enw{position:absolute;inset:0;z-index:30;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.38);padding:12px}
+#enw .gbox{background:var(--chrome);border:1px solid var(--line);border-radius:10px;box-shadow:0 10px 40px rgba(0,0,0,.3);
+  width:min(1180px,100%);height:min(860px,100%);display:flex;flex-direction:column;min-height:0;overflow:hidden}
+#enw .gh{display:flex;align-items:center;gap:8px;padding:8px 12px;border-bottom:1px solid var(--line);flex:0 0 auto}
+#enw .gh b{font-size:14px;font-weight:600}
+#enw .gh .sp,#enw .gf .sp{flex:1}
+#enwc{border:0;background:none;font-size:16px;padding:4px 8px}
+#enwg{flex:1 1 auto;min-height:0;display:grid;grid-template-columns:1fr 1fr}
+#enw .enc{min-height:0;min-width:0;display:flex;flex-direction:column}
+#enw .enc+.enc{border-left:1px solid var(--line)}
+#enw .ench{display:flex;align-items:center;gap:8px;padding:8px 12px;border-bottom:1px solid var(--line);background:var(--chrome2);flex:0 0 auto}
+#enw .ench b{font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--ink2);white-space:nowrap}
+#enw .ench input{flex:1;min-width:0;width:auto}
+#enw .ench .btn{flex:0 0 auto;padding:4px 9px;color:var(--ph)}
+#enwl,#enwr{position:relative;flex:1 1 auto;min-height:0;overflow-y:auto;overscroll-behavior:contain;padding:2px 0 8px;touch-action:pan-y}
+#enwd{display:flex;gap:6px;padding:8px 12px;overflow-x:auto;flex:0 0 auto;border-bottom:1px solid var(--line);scrollbar-width:thin}
+#enwd:empty{display:none}
+#enwd button{flex:0 0 auto;background:var(--chrome2);border:1px solid var(--line);border-radius:14px;padding:2px 9px;font:11px var(--mono);cursor:pointer;white-space:nowrap;color:var(--ink2)}
+#enwd button[aria-pressed="true"]{background:var(--accent-soft);color:var(--ink);border-color:var(--accent)}
+#enwl .tws{padding:10px 12px 3px;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--ink2)}
+#enwl .tws span{font-weight:400;letter-spacing:0;margin-left:6px}
+#enwl .tws.pgs{border-top:1px solid var(--line);margin-top:6px}
+#enwl .tws.pgs:first-child{border-top:0;margin-top:0}
+#enwl .enr{padding:6px 12px 7px;border-left:3px solid transparent;cursor:pointer}
+#enwl .enr:hover{background:var(--chrome2)}
+#enwl .enr.sel{background:var(--chrome2);border-left-color:var(--accent)}
+#enwl .enh{display:flex;align-items:baseline;gap:6px}
+#enwl .enh b{flex:1;font-weight:600;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#enwl small,#enwr small{display:block;font:11px var(--mono);color:var(--ink2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#enwl .ph .enh b{color:var(--ph)}
+#enwl .miss .enh b,#enwl .miss>small i{color:var(--error-color,#d32f2f)}
+#enwl small i{font:inherit;font-style:normal}
+#enwl .gc{font-size:11px;color:var(--ink2);border:1px solid var(--line);border-radius:9px;padding:0 6px;flex:0 0 auto}
+#enwl .ent{display:flex;align-items:center;gap:6px;margin-top:4px;padding:2px 2px 2px 8px;border-radius:5px;background:var(--accent-soft);min-width:0}
+#enwl .ent::before{content:"→";color:var(--accent);font-weight:600}
+#enwl .ent b{font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:50%}
+#enwl .ent small{flex:1;min-width:0}
+#enwl .ent.ph b{color:var(--ph)}
+#enwl .enx{flex:0 0 auto;background:none;border:0;color:var(--ink2);cursor:pointer;font-size:13px;padding:2px 6px;border-radius:4px}
+#enwl .enx:hover{background:var(--chrome)}
+#enwr .env{display:flex;align-items:center;gap:8px;padding:5px 12px;border-left:3px solid transparent;cursor:pointer}
+#enwr .env .t{flex:1;min-width:0}
+#enwr .env b{display:block;font-weight:400;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#enwr .env i{font-style:normal;font:11px var(--mono);color:var(--ink2);flex:0 1 auto;max-width:35%;text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#enwr .env em{display:block;font:10px system-ui,sans-serif;font-style:normal;color:var(--accent)}
+#enwr .env:hover{background:var(--chrome2)}
+#enwr .env.act,#enwr .env.sug{background:var(--accent-soft)}
+#enwr .env.sug{border-left-color:var(--accent)}
+#enwr .env.cur{border-left-color:var(--ink2)}
+#enwr .env.cur b{color:var(--accent);font-weight:600}
+#enwr .env.ph b,#enwr .env.ph small{color:var(--ph)}
+#enwr .pke{flex:0 0 auto;background:none;border:0;color:var(--ph);cursor:pointer;font-size:14px;padding:2px 6px}
+#enwr .phe{padding:8px 12px}
+#enwl .q,#enwr .q{color:var(--accent);font-weight:700}
+#enwl .hint,#enwr .hint{margin:12px;color:var(--ink2)}
+#enw .gf{display:flex;align-items:center;gap:8px;padding:8px 12px;border-top:1px solid var(--line);flex:0 0 auto}
+#enwk{font-size:12px;color:var(--ink2)}
+#enw .gf .btn:disabled{opacity:.4;cursor:default}
+@media (pointer:coarse){#enw .gf .btn{min-height:36px}#enwr .env,#enwl .enr{padding-top:8px;padding-bottom:8px}}
+@media (max-width:700px){#enw{padding:0}#enw .gbox{border-radius:0;height:100%;border:0}#enwg{grid-template-columns:1fr;grid-template-rows:2fr 3fr}#enw .enc+.enc{border-left:0;border-top:1px solid var(--line)}}
+#enw[hidden],#tgw[hidden],#erd[hidden],#gal[hidden],#cde[hidden],#galr[hidden],#galp[hidden],#galq[hidden],#galup[hidden],#galf{display:none}
 #gal .gbox,#cde .gbox{background:var(--chrome);border:1px solid var(--line);border-radius:10px;box-shadow:0 10px 40px rgba(0,0,0,.3);
   width:min(960px,100%);height:min(680px,100%);display:flex;flex-direction:column;min-height:0;overflow:hidden}
 #gal .gh,#cde .gh{display:flex;align-items:center;gap:8px;padding:10px 12px;border-bottom:1px solid var(--line);flex-wrap:wrap;flex:0 0 auto}
@@ -1131,6 +1194,7 @@ main.flp>aside,main.flp>#wgrip{display:none}
     <button type="button" role="menuitem" id="pnew">New project…</button>
     <button type="button" role="menuitem" id="pdup">Duplicate project…</button>
     <button type="button" role="menuitem" id="pdel">Delete project…</button>
+    <button type="button" role="menuitem" id="pents">Entities…</button>
     <hr>
     <button type="button" role="menuitem" id="pgnew0">New page</button>
     <hr id="pgnew0s">
@@ -1335,6 +1399,21 @@ main.flp>aside,main.flp>#wgrip{display:none}
   <div id="tgwl" role="tree"></div>
   <div class="gf"><button class="btn" id="tgwx" type="button">Cancel</button><button class="btn go" id="tgwok" type="button">OK</button></div>
 </div>
+<div id="enw" hidden role="dialog" aria-modal="true" aria-labelledby="enwt">
+  <div class="gbox">
+    <div class="gh"><b id="enwt">Entities</b><div class="sp"></div><button class="btn" id="enwc" type="button" aria-label="Cancel">✕</button></div>
+    <div id="enwg">
+      <div class="enc"><div class="ench"><b>In this project</b><input class="num" id="enws" type="text" placeholder="Search" aria-label="Search the project"
+        autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" enterkeyhint="search"></div>
+        <div id="enwl" role="listbox"></div></div>
+      <div class="enc"><div class="ench"><b>Home Assistant</b><input class="num" id="enwq" type="text" placeholder="Search" aria-label="Search Home Assistant"
+        autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" enterkeyhint="search"><button class="btn" id="enwn" type="button" title="New placeholder">@ new</button></div>
+        <div id="enwd" role="group" aria-label="Filter by domain"></div>
+        <div id="enwr" role="listbox"></div></div>
+    </div>
+    <div class="gf"><button class="btn" id="enwmk" type="button">Make placeholders</button><span class="sp"></span><span id="enwk"></span><button class="btn" id="enwx" type="button">Cancel</button><button class="btn go" id="enwok" type="button">OK</button></div>
+  </div>
+</div>
 <div id="erd" hidden role="alertdialog" aria-modal="true" aria-labelledby="erdt">
   <div class="ebox"><p id="erdt"></p><div class="row"><button class="btn" id="erdok" type="button">OK</button></div></div>
 </div>
@@ -1399,8 +1478,9 @@ class AdaStudio extends HTMLElement {
     let ms=[],ldrag=null,skipClick=false,lastShown='';
     let msel=false,lAnc=null;
     const phCur=new Map();
-    let selGrp=null,gIn=null,hovG=null,TW=null;
+    let selGrp=null,gIn=null,hovG=null,TW=null,EW=null;
     let proj='',projects=[],projOpen=false,saved='';
+    let exa='',exaRef='',examples=[],exUrl='/ada_studio_examples',exP=null,exErr=false;
     let rifH='',opening=false;
     const ovN=new Map();
     let stGrpCur='',selSt=false,stAn=false,stCur=0,stKey='',stLast='',stMs=[];
@@ -2561,6 +2641,7 @@ class AdaStudio extends HTMLElement {
       return (a>>>0).toString(36)+'.'+t.length;}
     function write(){
       if(opening){stamp();return;}
+      if(exa){if(exaRef&&exK(S)!==exaRef)exCopy();stamp();pdRefresh();return;}
       try{
         localStorage.setItem(dkey(),JSON.stringify(S));
         if(proj){if(rifH)localStorage.setItem(rkey(proj),rifH);else localStorage.removeItem(rkey(proj));}
@@ -3766,7 +3847,7 @@ class AdaStudio extends HTMLElement {
         s.p=s.p.map(q=>Object.assign({},q,{x:iv(q.x),y:iv(q.y)}));
     }
     function ints(){S.objects.forEach(intS);(S.guides||[]).forEach(g=>{g.c=iv(g.c);});}
-    function render(){fix2();spSync();normSt();anSplit();moFix();stImgFix();ints();gfix();pgfix();fixRules();glFix();drFix();resel();giro(()=>{draw();panels();});twSync();}
+    function render(){fix2();spSync();normSt();anSplit();moFix();stImgFix();ints();gfix();pgfix();fixRules();glFix();drFix();resel();giro(()=>{draw();panels();});twSync();enSync();}
     function req(){if(!raf)raf=requestAnimationFrame(()=>{raf=0;giro(()=>{draw();syncFields();});});}
     function draw(){
       if(!GM)return giro(draw);
@@ -4297,7 +4378,7 @@ class AdaStudio extends HTMLElement {
       if(spaceDown||tool==='hand'){pan={x:e.clientX,y:e.clientY,moved:0};cv.setPointerCapture(e.pointerId);return;}
       const p=pt(e);
       const hitEl=e.target.closest?e.target.closest('[data-i]'):null;
-      if(TW){pan={x:e.clientX,y:e.clientY,moved:0,tw:hitEl?+hitEl.dataset.i:-1};cv.setPointerCapture(e.pointerId);return;}
+      if(TW||EW){pan={x:e.clientX,y:e.clientY,moved:0,tw:hitEl?+hitEl.dataset.i:-1};cv.setPointerCapture(e.pointerId);return;}
       if(flow){
         pan={x:e.clientX,y:e.clientY,moved:0,fo:hitEl?+hitEl.dataset.i:-1};cv.setPointerCapture(e.pointerId);
         const so=flCv&&pan.fo>=0?S.objects[pan.fo]:null;
@@ -4684,6 +4765,12 @@ class AdaStudio extends HTMLElement {
       if(TW){
         if(e.key==='Escape'){e.preventDefault();twClose(false);}
         else if(e.key==='Enter'&&!TWE.ok.disabled){e.preventDefault();twClose(true);}
+        return;
+      }
+      if(EW){
+        if(e.defaultPrevented)return;
+        if(e.key==='Escape'){e.preventDefault();enClose(false);}
+        else if(e.key==='Enter'&&!EWE.ok.disabled&&!(path[0]&&/^(SELECT|TEXTAREA)$/.test(path[0].tagName))){e.preventDefault();enClose(true);}
         return;
       }
       if(!GL.el.hidden){
@@ -6780,6 +6867,7 @@ class AdaStudio extends HTMLElement {
     const twSec=o=>isBgl(o)?'l':!hasPgs()?'o':o.pg||'c';
     function twOpen(r,w){
       if(TW)twClose(false);
+      if(EW)enClose(false);
       const ids=twIds0(r,w);
       TW={r:r.id,w:w,cd:w==='t'&&rKind(r)!=='tap'?cdOk(r):true,chk:new Set(ids),c0:twKey(ids),fold:new Set(),sfold:new Set(),q:'',hv:null,host:twHost(),pj:proj};
       twSecs().forEach(x=>{if(x.k!=='c'&&x.k!=='o'&&x.k!==cpg()&&!twAll(x.t).some(id=>TW.chk.has(id)))TW.sfold.add(x.k);});
@@ -6899,6 +6987,312 @@ class AdaStudio extends HTMLElement {
     TWE.s.addEventListener('input',()=>{if(TW){TW.q=TWE.s.value;twDraw();}});
     TWE.x.addEventListener('click',()=>twClose(false));
     TWE.ok.addEventListener('click',()=>twClose(true));
+
+    const EWE={el:root.getElementById('enw'),s:root.getElementById('enws'),l:root.getElementById('enwl'),
+      q:root.getElementById('enwq'),n:root.getElementById('enwn'),d:root.getElementById('enwd'),r:root.getElementById('enwr'),
+      k:root.getElementById('enwk'),mk:root.getElementById('enwmk'),c:root.getElementById('enwc'),x:root.getElementById('enwx'),ok:root.getElementById('enwok')};
+    const EN_TOK=/[a-z_]+\.[a-z0-9_]+/g;
+    const EN_MAX=200;
+    const enHa=()=>{const h=self._hraw||self._hass;return (h&&h.states)||{};};
+    const enIs=e=>isSp(e)||!!enHa()[e];
+    function enWalk(v,key,f){
+      if(typeof v==='string'){const t=v.trim();if(/entit/.test(key)&&ENT_OK.test(t))f(t);else (v.match(EN_TOK)||[]).forEach(e=>{if(enIs(e))f(e);});}
+      else if(Array.isArray(v))v.forEach(x=>enWalk(x,key,f));
+      else if(isObj(v))Object.keys(v).forEach(k=>enWalk(v[k],k,f));
+    }
+    function enData(d,f){
+      if(typeof d!=='string'||!d)return;
+      const r=svcData(d);if(!r.bad)enWalk(r.o,'',f);
+      (d.match(EN_TOK)||[]).forEach(e=>{if(enIs(e))f(e);});
+    }
+    function enScan(){
+      const pg=hasPgs();
+      const M=new Map(),add=(e,K)=>{let x=M.get(e);if(!x)M.set(e,x={e:e,n:0,p:{}});x.n++;if(pg)K.forEach(k=>{x.p[k]=(x.p[k]||0)+1;});};
+      const used=new Set();
+      RULS().forEach(r=>{
+        const E2=new Set(),f=e=>E2.add(e);
+        rCs(r).forEach(k=>{used.add(k);if(k.k!=='tap'&&!pgK(k)&&k.e&&ENT_OK.test(k.e))f(k.e);});
+        const x=fxOf(r,'act');if(x){if(x.e&&ENT_OK.test(x.e))f(x.e);enData(x.d,f);}
+        const K=new Set();
+        if(pg&&E2.size){rObjs(r).forEach(o=>K.add(o.pg||'*'));if(rBgs(r).length)K.add('*');if(!K.size)K.add('-');}
+        E2.forEach(e=>add(e,K));
+      });
+      CAUS().forEach(k=>{if(!used.has(k)&&k.k!=='tap'&&!pgK(k)&&k.e&&ENT_OK.test(k.e))add(k.e,['-']);});
+      S.objects.forEach(o=>{if(!isCard(o)||!isObj(o.cfg))return;const E2=new Set();enWalk(o.cfg,'',e=>E2.add(e));E2.forEach(e=>add(e,[o.pg||'*']));});
+      return [...M.values()].sort((a,b)=>(isSp(b.e)-isSp(a.e))||(a.e<b.e?-1:1));
+    }
+    const enName=e=>{const x=EW&&EW.mk[e]||spOf(e);if(x)return x.n||'';const st=enHa()[e];return st&&st.attributes&&st.attributes.friendly_name||'';};
+    const enLabel=e=>isSp(e)?'@'+e.slice(11):e;
+    const enTo=e=>EW.to[e]||e;
+    const enMiss=e=>!isSp(e)&&!enHa()[e];
+    const enConv=e=>!isSp(e)&&CK_M.indexOf(e)<0;
+    function enOpen(){
+      if(TW)twClose(false);
+      if(EW)enClose(false);
+      pickClose();
+      const rows=giro(enScan);
+      EW={pj:proj,rows:rows,to:{},mk:{},sel:null,at:0,q:'',rq:'',dom:null,act:-1,ed:null,ph0:new Set(SPS().map(x=>x.e))};
+      EWE.s.value='';EWE.q.value='';
+      EWE.el.hidden=false;
+      enDraw();
+      const f=EWE.l.querySelector('[data-ene]');
+      if(f){EW.sel=f.dataset.ene;enDraw();}
+      if(!coarse)EWE.q.focus();
+    }
+    function enClose(ok){
+      if(!EW)return;
+      const W=EW;
+      EW=null;EWE.el.hidden=true;
+      const M={};Object.keys(W.to).forEach(e=>{if(W.to[e]&&W.to[e]!==e)M[e]=W.to[e];});
+      if(W.pj!==proj)return req();
+      if(ok&&Object.keys(M).length){
+        settle();const n=enRepl(M,W.mk);enBorn(W);
+        render();store(true);flush();
+        stamp(Object.keys(M).length+(Object.keys(M).length===1?' entity':' entities')+' replaced · '+n+(n===1?' use':' uses'));
+        return;
+      }
+      if(SPS().some(x=>!W.ph0.has(x.e))){settle();enBorn(W);render();store(true);return;}
+      req();
+    }
+    function enBorn(W){
+      if(!Array.isArray(S.ph))return;
+      const U=spUsed();
+      S.ph=S.ph.filter(x=>W.ph0.has(x.e)||U.has(x.e));
+    }
+    function enSync(){
+      if(!EW)return;
+      if(EW.pj!==proj)return enClose(false);
+      enDraw(true);
+    }
+    function enMark(t,q){
+      t=String(t);if(!q)return esc(t);
+      const i=twFold(t).indexOf(q);if(i<0)return esc(t);
+      return esc(t.slice(0,i))+'<span class="q">'+esc(t.slice(i,i+q.length))+'</span>'+esc(t.slice(i+q.length));
+    }
+    function enRow(x,q,un){
+      const e=x.e,to=enTo(e),ch=to!==e,nm=enName(e),miss=enMiss(e);x={e:e,n:un||x.n};
+      let h='<div class="enr'+(isSp(e)?' ph':'')+(miss?' miss':'')+(e===EW.sel?' sel':'')+'" data-ene="'+esc(e)+'" role="option" aria-selected="'+(e===EW.sel)+'">'+
+        '<div class="enh"'+(miss?' title="Not in this Home Assistant"':'')+'><b>'+enMark(nm||enLabel(e),q)+'</b>'+
+        '<span class="gc" title="'+x.n+(x.n===1?' use':' uses')+'">'+x.n+'</span></div>'+
+        '<small>'+esc(entDom(e))+' · '+enMark(enLabel(e),q)+(miss?' · <i>not found</i>':'')+'</small>';
+      if(ch){
+        const tn=enName(to),mk=!!EW.mk[to];
+        h+='<div class="ent'+(isSp(to)?' ph':'')+'"><b>'+esc(tn||enLabel(to))+'</b><small>'+(mk?'new · ':'')+esc(enLabel(to))+'</small>'+
+          '<button type="button" class="enx" data-enu="'+esc(e)+'" title="Undo" aria-label="Undo">✕</button></div>';
+      }
+      return h+'</div>';
+    }
+    function enItems(){
+      const items=entityList(),q=EW.rq.trim(),at=q[0]==='@';
+      const words=twFold(at?q.slice(1):q).split(/\s+/).filter(Boolean);
+      const dom=enDomNow(items);
+      const all=items.filter(it=>it.v!==EW.sel&&(!at||it.ph)&&(!dom||it.d===dom)&&words.every(w=>twFold(it.k).indexOf(w)>=0));
+      const sp=EW.sel&&spOf(EW.sel),sug=sp&&sp.m&&enHa()[sp.m]?sp.m:'';
+      if(sug){const j=all.findIndex(it=>it.v===sug);if(j>=0)all.unshift(all.splice(j,1)[0]);}
+      const slug=at?spSlug(q.slice(1)):'';
+      if(slug&&!items.some(it=>it.v==='ada_studio.'+slug))all.unshift({v:'ada_studio.'+slug,make:true});
+      return {all:all,sug:sug};
+    }
+    function enDomNow(items){
+      const has=d=>items.some(it=>it.d===d);
+      if(EW.dom!=null)return EW.dom&&has(EW.dom)?EW.dom:'';
+      const d=EW.sel?entDom(EW.sel):'';
+      return d&&has(d)?d:'';
+    }
+    function enDoms(){
+      const items=entityList(),cnt={};
+      items.forEach(it=>{cnt[it.d]=(cnt[it.d]||0)+1;});
+      const ds=Object.keys(cnt).sort((a,b)=>{
+        const ia=DOMS.indexOf(a),ib=DOMS.indexOf(b);
+        if(ia>=0||ib>=0)return (ia<0?99:ia)-(ib<0?99:ib);
+        return a<b?-1:1;
+      });
+      const cur=enDomNow(items);
+      put(EWE.d,EW.ed?'':'<button type="button" data-d="" aria-pressed="'+(!cur)+'">all</button>'+
+        ds.map(d=>'<button type="button" data-d="'+esc(d)+'" aria-pressed="'+(d===cur)+'">'+esc(d)+'</button>').join(''));
+    }
+    function enRight(){
+      if(EW.ed){
+        const x=spOf(EW.ed);
+        if(x){put(EWE.r,'<div class="phe">'+spEdHtml(x)+'</div>');return;}
+        EW.ed=null;
+      }
+      if(!EW.sel){EW.rows_r=[];put(EWE.r,'');return;}
+      const R=enItems(),rows=R.all.slice(0,EN_MAX),cur=enTo(EW.sel),q=twFold(EW.rq.trim().replace(/^@/,''));
+      EW.rows_r=rows;
+      if(EW.act>=rows.length)EW.act=-1;
+      const uses=new Map(EW.rows.map(x=>[x.e,x.n]));
+      let h=rows.map((it,i)=>{
+        if(it.make)return '<div class="env ph'+(i===EW.act?' act':'')+'" data-i="'+i+'" role="option"><span class="t"><b>+ placeholder “'+esc(it.v.slice(11))+'”</b><small>'+esc(SP_DOM.test(entDom(EW.sel))?entDom(EW.sel):'sensor')+'</small></span></div>';
+        const n=uses.get(it.v);
+        return '<div class="env'+(it.ph?' ph':'')+(it.v===R.sug?' sug':'')+(it.v===cur?' cur':'')+(i===EW.act?' act':'')+'" data-i="'+i+'" role="option" aria-selected="'+(it.v===cur)+'">'+
+          '<span class="t"><b>'+enMark(it.n||enLabel(it.v),q)+'</b><small>'+enMark(it.v,q)+'</small></span>'+
+          '<i>'+esc(stateText(it.v))+(n?'<em>in use · '+n+'</em>':'')+(it.v===R.sug?'<em>imitates</em>':'')+'</i>'+
+          (it.ph?'<button type="button" class="pke" data-enp="'+i+'" title="Edit placeholder" aria-label="Edit placeholder">✎</button>':'')+'</div>';
+      }).join('');
+      if(!rows.length)h='<p class="hint">No results</p>';
+      else if(R.all.length>EN_MAX)h+='<p class="hint">'+(R.all.length-EN_MAX)+' more</p>';
+      put(EWE.r,h);
+    }
+    function enDraw(keep){
+      if(!EW)return;
+      const q=twFold(EW.q.trim()),hit=x=>!q||[x.e,enLabel(x.e),enName(x.e),enTo(x.e)].some(t=>twFold(t).indexOf(q)>=0);
+      let h='';
+      if(hasPgs()){
+        PGS().map(p=>[p.id,pgName(p)]).concat([['*','All pages'],['-','No object']]).forEach(([k,n])=>{
+          const R=EW.rows.filter(x=>x.p&&x.p[k]&&hit(x));
+          if(R.length)h+='<div class="tws pgs">'+esc(n)+'<span>'+R.length+'</span></div>'+R.map(x=>enRow(x,q,x.p[k])).join('');
+        });
+      }else{
+        const P=EW.rows.filter(x=>isSp(x.e)&&hit(x)),H=EW.rows.filter(x=>!isSp(x.e)&&hit(x));
+        if(P.length)h+='<div class="tws">Placeholders<span>'+P.length+'</span></div>'+P.map(x=>enRow(x,q)).join('');
+        if(H.length)h+='<div class="tws">Home Assistant<span>'+H.length+'</span></div>'+H.map(x=>enRow(x,q)).join('');
+      }
+      put(EWE.l,h||'<p class="hint">'+(q?'No matches':'No entities')+'</p>');
+      enDoms();if(!(keep&&EW.ed&&EWE.r.querySelector('.phe')))enRight();enBtns();
+    }
+    function enBtns(){
+      const n=Object.keys(EW.to).filter(e=>EW.to[e]!==e).length;
+      const d=!n;if(EWE.ok.disabled!==d)EWE.ok.disabled=d;
+      const k=n?n+' to replace':'';if(EWE.k.textContent!==k)EWE.k.textContent=k;
+      const m=!EW.rows.some(x=>enConv(x.e)&&!isSp(enTo(x.e)));if(EWE.mk.disabled!==m)EWE.mk.disabled=m;
+    }
+    function enSet(e,v){
+      if(!EW||!EW.rows.some(x=>x.e===e))return;
+      if(v===e)delete EW.to[e];else EW.to[e]=v;
+    }
+    function enSel(e,at){
+      if(!EW)return;
+      if(at!=null)EW.at=at;
+      if(EW.sel===e)return;
+      EW.sel=e;EW.dom=null;EW.rq='';EWE.q.value='';EW.act=-1;EW.ed=null;
+      enDraw();
+      const L=[...EWE.l.querySelectorAll('[data-ene]')];
+      if(at==null||!L[at]||L[at].dataset.ene!==e)EW.at=L.findIndex(n=>n.dataset.ene===e);
+      const r=L[EW.at];if(r&&r.scrollIntoView)r.scrollIntoView({block:'nearest'});
+      EWE.r.scrollTop=0;
+    }
+    function enChoose(i){
+      if(!EW||!EW.sel)return;
+      const it=EW.rows_r[i];if(!it)return;
+      const e=EW.sel;
+      if(it.make){
+        settle();
+        const d=SP_DOM.test(entDom(e))?entDom(e):'sensor';
+        if(!Array.isArray(S.ph))S.ph=[];
+        S.ph.push({e:it.v,d:d,s:TE_ONOFF.test(d)?'off':''});
+        spSync();enSet(e,it.v);
+        EW.rq='';EWE.q.value='';EW.act=-1;EW.ed=it.v;
+        render();store(true);
+        const n=EWE.r.querySelector('[data-phf="n"]');if(n&&!coarse)n.focus();
+        return;
+      }
+      enSet(e,it.v===enTo(e)?e:it.v);
+      const ord=[...EWE.l.querySelectorAll('[data-ene]')].map(n=>n.dataset.ene),j=ord[EW.at]===e?EW.at:ord.indexOf(e);
+      const k=ord.findIndex((x,i)=>i>j&&x!==e&&!(x in EW.to));
+      if(k>=0)enSel(ord[k],k);else enDraw();
+    }
+    const EN_ANON={person:'person',device_tracker:'tracker'};
+    const EN_PRIV=['latitude','longitude','gps_accuracy','altitude','user_id','entity_picture','id','source','device_trackers'];
+    function enPlace(e){
+      const h=self._hraw||self._hass,r=h&&h.entities&&h.entities[e];
+      let ar=r&&r.area_id;
+      if(!ar&&r&&r.device_id&&h.devices){const d=h.devices[r.device_id];ar=d&&d.area_id;}
+      const A=ar&&h.areas&&h.areas[ar],an=A&&spSlug(A.name);
+      return an||spSlug(e.slice(e.indexOf('.')+1));
+    }
+    function enMake(){
+      if(!EW)return;
+      const taken=new Set(SPS().map(x=>x.e));EW.rows.forEach(x=>{if(isSp(x.e))taken.add(x.e);});
+      Object.keys(EW.to).forEach(e=>taken.add(EW.to[e]));
+      EW.rows.forEach(x=>{
+        const e=x.e;if(!enConv(e)||isSp(enTo(e)))return;
+        const d=e.slice(0,e.indexOf('.')),an=EN_ANON[d];
+        const base=an||(spSlug(d)+'_'+(enPlace(e)||'entity')).replace(/_+$/,'');
+        let k=1,id;do{id='ada_studio.'+base+'_'+(k++);}while(taken.has(id));
+        taken.add(id);
+        const st=enHa()[e],A=(st&&st.attributes)||{},a={};
+        const keys=CAUS().filter(k=>k.e===e&&k.a).map(k=>k.a).concat(['unit_of_measurement','device_class','supported_color_modes']);
+        keys.forEach(k=>{const v=A[k];if(v==null||k in a||EN_PRIV.indexOf(k)>=0)return;
+          if(typeof v==='number'||typeof v==='boolean'||typeof v==='string')a[k]=v;
+          else if(Array.isArray(v)&&v.every(y=>typeof y!=='object'))a[k]=v.slice();});
+        const p={e:id,d:SP_DOM.test(d)?d:'sensor',s:st?String(st.state):''};
+        if(an&&p.s&&p.s!=='home')p.s='not_home';
+        const nm=id.slice(11).replace(/_/g,' ');p.n=nm[0].toUpperCase()+nm.slice(1);
+        if(Object.keys(a).length)p.a=a;
+        EW.mk[id]=p;EW.to[e]=id;
+      });
+      enDraw();
+    }
+    function enRepl(M,mk){
+      let n=0;
+      const one=v=>{if(M[v]){n++;return M[v];}return v;};
+      const txt=v=>v.replace(EN_TOK,m=>{if(M[m]){n++;return M[m];}return m;});
+      const deep=v=>typeof v==='string'?(M[v.trim()]?(n++,M[v.trim()]):txt(v)):Array.isArray(v)?v.map(deep):isObj(v)?Object.keys(v).reduce((o,k)=>{o[k]=deep(v[k]);return o;},{}):v;
+      CAUS().forEach(k=>{if(k.k!=='tap'&&!pgK(k)&&k.e)k.e=one(k.e);});
+      RULS().forEach(r=>(Array.isArray(r.fx)?r.fx:[]).forEach(x=>{if(x&&x.k==='act'){if(x.e)x.e=one(x.e);if(typeof x.d==='string')x.d=txt(x.d);}}));
+      S.objects.forEach(o=>{
+        if(!isCard(o)||!isObj(o.cfg))return;
+        const n0=n,c=deep(o.cfg);if(n===n0)return;
+        o.cfg=c;
+        if(o.src==='dash'){delete o.src;delete o.ref;o.yaml=yamlOf(o.cfg,'');}
+        else if(o.src==='ui'||typeof o.yaml!=='string')o.yaml=yamlOf(o.cfg,'');
+        else o.yaml=o.yaml.replace(EN_TOK,m=>M[m]||m);
+      });
+      [isObj(S.sim)?S.sim:null,isObj(S.clk)&&isObj(S.clk.w)?S.clk.w:null].forEach(T=>{if(!T)return;
+        Object.keys(M).forEach(e=>{if(!(e in T))return;if(!(M[e] in T))T[M[e]]=T[e];delete T[e];});});
+      const U=spUsed();
+      Object.keys(mk).forEach(id=>{if(U.has(id)&&!spOf(id)){if(!Array.isArray(S.ph))S.ph=[];S.ph.push(clone(mk[id]));}});
+      if(Array.isArray(S.ph))S.ph=S.ph.filter(x=>!(x.e in M)||U.has(x.e));
+      return n;
+    }
+    function enAct(d){
+      const n=EW.rows_r.length;if(!n)return;
+      EW.act=EW.act<0?(d>0?0:n-1):(EW.act+d+n)%n;
+      EWE.r.querySelectorAll('.env').forEach(x=>x.classList.toggle('act',+x.dataset.i===EW.act));
+      const a=EWE.r.querySelector('.env.act');if(a&&a.scrollIntoView)a.scrollIntoView({block:'nearest'});
+    }
+    EWE.l.addEventListener('click',e=>{
+      if(!EW)return;
+      const u=e.target.closest('[data-enu]');
+      if(u){const x=u.dataset.enu;delete EW.to[x];if(EW.sel===x)enDraw();else enSel(x);return;}
+      const r=e.target.closest('[data-ene]');if(r)enSel(r.dataset.ene,[...EWE.l.querySelectorAll('[data-ene]')].indexOf(r));
+    });
+    EWE.r.addEventListener('click',e=>{
+      if(!EW)return;
+      const b=e.target.closest('[data-enp]');
+      if(b){const it=EW.rows_r[+b.dataset.enp];if(it&&spOf(it.v)){EW.ed=it.v;enDraw();const n=EWE.r.querySelector('[data-phf="n"]');if(n&&!coarse)n.focus();}return;}
+      if(e.target.closest('[data-phb]')){EW.ed=null;enDraw();return;}
+      if(e.target.closest('[data-phx]')){spDel(EW.ed);return;}
+      if(e.target.closest('.phe'))return;
+      const o=e.target.closest('[data-i]');if(o)enChoose(+o.dataset.i);
+    });
+    EWE.r.addEventListener('change',e=>{const t=e.target.closest('[data-phf]');if(t&&EW&&EW.ed)spPut(EW.ed,t.dataset.phf,t.value);});
+    EWE.r.addEventListener('keydown',e=>{
+      if(!EW||!EW.ed)return;
+      if(e.key==='Escape'){e.preventDefault();EW.ed=null;enDraw();}
+      else if(e.key==='Enter'&&e.target.tagName==='INPUT'){e.preventDefault();e.target.blur();}
+    });
+    EWE.d.addEventListener('click',e=>{
+      const b=e.target.closest('[data-d]');if(!b||!EW)return;
+      EW.dom=b.dataset.d;EW.act=-1;enDraw();EWE.r.scrollTop=0;
+    });
+    EWE.s.addEventListener('input',()=>{if(EW){EW.q=EWE.s.value;enDraw();}});
+    EWE.q.addEventListener('input',()=>{if(EW){EW.rq=EWE.q.value;EW.act=-1;EW.ed=null;enDraw();EWE.r.scrollTop=0;}});
+    EWE.q.addEventListener('keydown',e=>{
+      if(!EW)return;
+      if(e.key==='ArrowDown'||e.key==='ArrowUp'){e.preventDefault();enAct(e.key==='ArrowDown'?1:-1);}
+      else if(e.key==='Enter'){e.preventDefault();if(EW.rows_r.length)enChoose(EW.act>=0?EW.act:0);}
+      else if(e.key==='Escape'&&EW.rq){e.preventDefault();EWE.q.value='';EW.rq='';EW.act=-1;enDraw();}
+    });
+    EWE.n.addEventListener('click',()=>{if(!EW)return;EW.ed=null;EWE.q.value='@';EW.rq='@';EW.act=-1;enDraw();EWE.q.focus();});
+    EWE.mk.addEventListener('click',enMake);
+    EWE.c.addEventListener('click',()=>enClose(false));
+    EWE.x.addEventListener('click',()=>enClose(false));
+    EWE.ok.addEventListener('click',()=>enClose(true));
+    let enVelo=false;
+    EWE.el.addEventListener('pointerdown',e=>{enVelo=e.target===EWE.el;});
+    EWE.el.addEventListener('click',e=>{if(e.target===EWE.el&&enVelo)enClose(false);enVelo=false;});
 
     const bhBox=()=>'<div id="bhx"></div>';
     let bhRep=null;
@@ -11730,6 +12124,7 @@ opt('nx:act','Switch on tap','calls the toggle of an entity')+
     }
     function projDir(){
       const pd=pubDir()||'/local/ada_studio';
+      if(exa)return exUrl+'/'+exa;
       return proj?pd+'/'+proj:(S.base||pd);
     }
     function yamlWarn(){
@@ -11868,6 +12263,7 @@ opt('nx:act','Switch on tap','calls the toggle of an entity')+
       pmShow(false);svOk=false;
       const h=self._hass;
       if(!h){stamp('Home Assistant not available',true);return;}
+      if(exa){exErr=false;if(!await exCopy())return;}
       if(!full&&!proj){stamp('no project open',true);return;}
       const need=[];
       giro(()=>S.objects.forEach(x=>{if(x.t==='icon'&&expEl(x)){need.push(x.icon||'');symList(x).forEach(q=>need.push(q.icon));}}));
@@ -11949,7 +12345,7 @@ opt('nx:act','Switch on tap','calls the toggle of an entity')+
       E.pmenu.hidden=!on;E.pmb.setAttribute('aria-expanded',String(on));
       if(!on)return;
       E.pmcmd.hidden=!!list;E.pmlist.hidden=!list;
-      const nd=!proj;['#psave','#pdash','#pdup','#pdel'].forEach(k=>{const b=$(k);if(b.disabled!==nd)b.disabled=nd;});
+      const nd=!proj,ne=nd&&!exa;[['#psave',ne],['#pdash',nd],['#pdup',ne],['#pdel',nd]].forEach(([k,x])=>{const b=$(k);if(b.disabled!==x)b.disabled=x;});
       const r=E.pmb.getBoundingClientRect();
       E.pmenu.style.left=Math.max(4,r.left)+'px';E.pmenu.style.top=(r.bottom+6)+'px';
     }
@@ -12123,8 +12519,8 @@ opt('nx:act','Switch on tap','calls the toggle of an entity')+
       return !dirty()||confirm('Project “'+proj+'” has changes not saved to the server.\n'+
         'They stay as a draft in this browser only. Continue?');
     }
-    function thumb(p){
-      const dir=(pubDir()||'/local/ada_studio')+'/'+p.name+'/';
+    function thumb(p,ex){
+      const dir=(ex?exUrl:(pubDir()||'/local/ada_studio'))+'/'+p.name+'/';
       if(p.pv)return '<img alt="" loading="lazy" src="'+esc(dir+'anteprima.jpg?v='+p.pv)+'">';
       if(!p.bg)return '<img alt="">';
       const u=/^(https?:|data:|\/)/.test(p.bg)?p.bg:dir+String(p.bg).replace(/^\/+/,'');
@@ -12139,10 +12535,13 @@ opt('nx:act','Switch on tap','calls the toggle of an entity')+
             :(p.objects||0)+' objects · v'+(p.ver||0)+' · '+when)+'</div></div>'+
           (v1?'<button class="btn" type="button" data-pdel="'+esc(p.name)+'">Delete</button>':'')+'</div>';
       }).join('');
-      put(E.plist,rows||'<p class="hint" style="margin:6px">No projects</p>');
+      const ex=examples.filter(pOpens).map(p=>'<div class="pr'+(p.name===exa?' on':'')+'" data-pe="'+esc(p.name)+'">'+thumb(p,true)+
+          '<div style="min-width:0;flex:1"><div class="nm">'+esc(p.name)+'</div>'+
+          '<div class="sb">'+(p.objects||0)+' objects</div></div></div>').join('');
+      put(E.plist,(rows||'<p class="hint" style="margin:6px">No projects</p>')+(ex?'<div class="prs">Examples</div>'+ex:''));
       pverRender();
       if(projOpen)pmShow(true,true);else if(!E.pmenu.hidden&&!E.pmlist.hidden)pmShow(false);
-      const nm=proj||(opening?'opening…':'no project');
+      const nm=proj||exa||(opening?'opening…':'no project');
       if(E.pname.textContent!==nm)E.pname.textContent=nm;
       pdRefresh();
     }
@@ -12153,13 +12552,14 @@ opt('nx:act','Switch on tap','calls the toggle of an entity')+
       n.classList.toggle('diff',sv!==MODULE_VERSION);
     }
     async function projList(){
-      try{const r=await wsCall({type:'ada_studio/projects'});projects=r.projects||[];}
-      catch(err){projects=[];pmsg('project list not available: '+errText(err),true);}
+      try{const r=await wsCall({type:'ada_studio/projects'});projects=r.projects||[];
+        examples=Array.isArray(r.examples)?r.examples:[];if(r.examples_url)exUrl=r.examples_url;}
+      catch(err){projects=[];examples=[];pmsg('project list not available: '+errText(err),true);}
       projRender();
     }
-    async function loadProject(name,discard){
+    async function loadProject(name,discard,ex){
       let r;
-      try{r=await wsCall({type:'ada_studio/project_open',project:name});}
+      try{r=await wsCall(ex?{type:'ada_studio/project_open',project:name,example:true}:{type:'ada_studio/project_open',project:name});}
       catch(err){pmsg('open failed: '+errText(err),true);return false;}
       let q=null;try{q=JSON.parse(r.content||'{}');}catch(_){}
       const fm=fmtOf(q);
@@ -12167,7 +12567,7 @@ opt('nx:act','Switch on tap','calls the toggle of an entity')+
       if(fm!==FORMAT&&fm!==0){pmsg('“'+name+'”: project from a newer version: not supported.',true);return false;}
       if(fm===0)q=fresh();
       const srv=norm(q),srvH=hsh(srv);
-      const b=discard?null:bozza(name);
+      const b=discard||ex?null:bozza(name);
       let use=q,resumed=false,rif=srvH;
       if(b&&norm(b)!==srv){
         const bv=+b.ver||0,sv=+q.ver||0,br=rifOf(name);
@@ -12179,19 +12579,48 @@ opt('nx:act','Switch on tap','calls the toggle of an entity')+
             'OK: keep the changes from this browser (you will be asked before overwriting).\n'+
             'Cancel: use the server version; the changes in this browser are lost.')){use=b;rif=br;}
       }
-      proj=name;S=Object.assign(fresh(),use);saved=srv;rifH=rif;opening=false;
+      proj=ex?'':name;exa=ex?name:'';exaRef='';exErr=false;S=Object.assign(fresh(),use);saved=srv;rifH=rif;opening=false;
       pick([]);selBg=selSt=selRu=selTe=false;pgStop();curPg=null;ruCur='';ruOpP=null;drR=null;drK=[];drC=null;selG=-1;draft=null;probes.clear();moTw.clear();flReset();if(flow)selRu=true;selTe=false;
       projOpen=false;
-      try{localStorage.setItem(KEY+'-last',name);}catch(_){}
+      if(!ex)try{localStorage.setItem(KEY+'-last',name);}catch(_){}
       mvCut=[];fields();chrome();projRender();fit();write();hist=[];hi=-1;snap(true);render();
       if(!resumed&&use===q){saved=JSON.stringify(S);pdRefresh();}
+      if(ex)exaRef=exK(S);
       pmsg(resumed?'Unsaved changes resumed (from v'+(S.ver||0)+'): save to server to share them.':'');
-      stamp((resumed?'project “'+name+'” opened, unsaved changes resumed':'project “'+name+'” opened')+
+      stamp((ex?'example “'+name+'” opened':resumed?'project “'+name+'” opened, unsaved changes resumed':'project “'+name+'” opened')+
         (mvCut.length?' · one motion per Apply motion, removed: '+mvCut.join(', '):''));
       mvCut=[];
       return true;
     }
-    async function newProject(from,content){
+    const exK=o=>JSON.stringify(Object.assign({},o,{sim:undefined,clk:undefined}));
+    function exCopy(){
+      if(!exa)return Promise.resolve(!!proj);
+      if(exP)return exP;
+      if(exErr)return Promise.resolve(false);
+      const ex=exa;
+      exP=(async()=>{
+        let names=new Set(projects.map(p=>p.name));
+        try{const r=await wsCall({type:'ada_studio/projects'});names=new Set((r.projects||[]).map(p=>p.name));}catch(_){}
+        const base=ex.slice(0,35)+'-copy';
+        for(let k=1;k<100;k++){
+          const nm=k===1?base:base+'-'+k;
+          if(names.has(nm))continue;
+          const str=JSON.stringify(S),body=JSON.stringify(S,null,2);
+          try{await wsCall({type:'ada_studio/project_new',project:nm,example:ex,content:body});}
+          catch(err){if(err&&err.code==='exists'){names.add(nm);continue;}
+            exErr=true;stamp('example not copied to your projects: '+errText(err),true);return false;}
+          if(exa!==ex)return false;
+          proj=nm;exa='';exaRef='';saved=str;rifH=hsh(norm(JSON.parse(body)));
+          try{localStorage.setItem(KEY+'-last',nm);}catch(_){}
+          write();await projList();
+          stamp('copied to your projects as «'+nm+'»');
+          return true;
+        }
+        exErr=true;stamp('example not copied to your projects: no free name',true);return false;
+      })().finally(()=>{exP=null;});
+      return exP;
+    }
+    async function newProject(from,content,ex){
       if(!guard())return;
       const raw=prompt(from?('Name of the copy of “'+from+'” (a-z, 0-9, - and _):')
                            :'New project name (a-z, 0-9, - and _):','');
@@ -12199,7 +12628,7 @@ opt('nx:act','Switch on tap','calls the toggle of an entity')+
       const name=String(raw).trim().toLowerCase();
       if(!/^[a-z0-9_-]{1,40}$/.test(name)){pmsg('invalid name: a-z, 0-9, - and _ only',true);return;}
       const body=from?null:(content||JSON.stringify(Object.assign(fresh(),{ver:0}),null,2));
-      try{await wsCall({type:'ada_studio/project_new',project:name,from:from||null,content:body});}
+      try{await wsCall(ex?{type:'ada_studio/project_new',project:name,example:from}:{type:'ada_studio/project_new',project:name,from:from||null,content:body});}
       catch(err){pmsg('create failed: '+errText(err),true);return;}
       await projList();
       await loadProject(name,true);
@@ -12289,11 +12718,14 @@ opt('nx:act','Switch on tap','calls the toggle of an entity')+
     }
     $('#pdash').onclick=()=>dbCreate();
     $('#pnew').onclick=()=>{pmShow(false);newProject(null);};
-    $('#pdup').onclick=()=>{pmShow(false);if(!proj){pmsg('no project to duplicate',true);return;}newProject(proj);};
+    $('#pdup').onclick=()=>{pmShow(false);if(!proj&&!exa){pmsg('no project to duplicate',true);return;}newProject(proj||exa,null,!proj);};
     $('#pdel').onclick=()=>{pmShow(false);delProject();};
+    $('#pents').onclick=()=>{pmShow(false);enOpen();};
     E.plist.addEventListener('click',async e=>{
       const d=e.target.closest('[data-pdel]');
       if(d){await delProject(d.dataset.pdel);return;}
+      const x=e.target.closest('[data-pe]');
+      if(x){const n=x.dataset.pe;if(n===exa){projOpen=false;projRender();return;}if(!guard())return;await loadProject(n,false,true);return;}
       const r=e.target.closest('[data-p]');if(!r)return;
       const name=r.dataset.p;
       if(r.classList.contains('v1')){
@@ -12365,7 +12797,7 @@ opt('nx:act','Switch on tap','calls the toggle of an entity')+
       if(PK.field===field&&!PK.el.hidden&&!PK.ed)return;
       if(!PK.el.hidden)pickClose();
       if(!PK.dk)PK.dk={};PK.dk[PK.kind||'ents']=PK.dom||'';
-      PK.field=field;PK.kind=field.dataset.pick;PK.q='';PK.act=-1;PK.s.value='';PK.dom=PK.dk[PK.kind]||'';
+      PK.field=field;PK.kind=field.dataset.pick;PK.q='';PK.act=-1;PK.s.value='';PK.dom=PK.dk[PK.kind]||'';PK.sug='';
       PK.el.classList.toggle('coarse',coarse);
       PK.el.hidden=false;field.setAttribute('aria-expanded','true');
       if(window.visualViewport){visualViewport.addEventListener('resize',pickRe);visualViewport.addEventListener('scroll',pickRe);}
@@ -12390,7 +12822,7 @@ opt('nx:act','Switch on tap','calls the toggle of an entity')+
       const fl=PK.field;if(!fl)return;
       const hr=self.getBoundingClientRect(),fr=fl.getBoundingClientRect(),vv=window.visualViewport;
       if(!coarse){
-        const dr=$('#detail').getBoundingClientRect();
+        const dr=(fl.closest('#enwl')||$('#detail')).getBoundingClientRect();
         if(fr.bottom<dr.top||fr.top>dr.bottom)return pickClose();
       }
       const top0=Math.max(hr.top,vv?vv.offsetTop:hr.top),bot0=Math.min(hr.bottom,vv?vv.offsetTop+vv.height:hr.bottom);
@@ -12436,6 +12868,7 @@ opt('nx:act','Switch on tap','calls the toggle of an entity')+
       const q=PK.q.trim(),at=PK.kind==='ents'&&q[0]==='@';
       const words=(at?q.slice(1):PK.q).toLowerCase().split(/\s+/).filter(Boolean),cur=fl.value,items=pickItems();
       const all=items.filter(it=>(!at||it.ph)&&(PK.kind==='fonts'||!PK.dom||it.d===PK.dom)&&words.every(w=>it.k.indexOf(w)>=0));
+      if(PK.sug&&!words.length){const j=all.findIndex(it=>it.v===PK.sug);if(j>=0){all.unshift(all.splice(j,1)[0]);if(PK.act<0)PK.act=0;}}
       const rows=all.slice(0,PK_MAX);
       if(PK.kind==='fonts'&&!words.length)rows.unshift({v:'',n:'theme font'});
       const raw=coarse?PK.s.value.trim():'';
@@ -12563,15 +12996,18 @@ opt('nx:act','Switch on tap','calls the toggle of an entity')+
     function spEdBack(){PK.ed=null;pickDoms();pickList(true);}
     function spEdList(){
       const x=spOf(PK.ed);if(!x){PK.ed=null;return pickList(true);}
-      const ds=SP_DOMS.indexOf(x.d)<0?[x.d].concat(SP_DOMS):SP_DOMS;
       PK.rows=[];
-      put(PK.l,'<div class="phe"><div class="phh"><button type="button" class="btn" data-phb aria-label="Back">‹</button><b>@'+esc(x.e.slice(11))+'</b></div>'+
+      put(PK.l,'<div class="phe">'+spEdHtml(x)+'</div>');
+    }
+    function spEdHtml(x){
+      const ds=SP_DOMS.indexOf(x.d)<0?[x.d].concat(SP_DOMS):SP_DOMS;
+      return '<div class="phh"><button type="button" class="btn" data-phb aria-label="Back">‹</button><b>@'+esc(x.e.slice(11))+'</b></div>'+
         '<label class="f">domain<select class="num" data-phf="d">'+ds.map(d=>'<option'+(d===x.d?' selected':'')+'>'+esc(d)+'</option>').join('')+'</select></label>'+
         '<label class="f">imitates<select class="num" data-phf="m"><option value="">—</option>'+CK_M.map(m=>'<option'+(m===x.m?' selected':'')+'>'+m+'</option>').join('')+'</select></label>'+
         '<label class="f">name<input class="num" type="text" data-phf="n" value="'+esc(x.n||'')+'" placeholder="'+esc(x.e.slice(11))+'"></label>'+
         '<label class="f">state<input class="num" type="text" data-phf="s" value="'+esc(x.s)+'"></label>'+
         '<label class="f col">attributes<textarea class="num" data-phf="a" rows="3" spellcheck="false" placeholder="brightness: 255">'+esc(spAttrTxt(x.a))+'</textarea></label>'+
-        '<button type="button" class="btn" data-phx>Delete placeholder</button></div>');
+        '<button type="button" class="btn" data-phx>Delete placeholder</button>';
     }
     function spPut(e,f,v){
       const x=spOf(e);if(!x)return;
@@ -12595,6 +13031,7 @@ opt('nx:act','Switch on tap','calls the toggle of an entity')+
       const n=spUses(e);
       if(n&&!confirm('Delete the placeholder '+e+'?\n\nIt is used '+n+(n>1?' times':' time')+'; those uses stay, without a state.'))return;
       settle();S.ph.splice(S.ph.indexOf(x),1);
+      if(EW&&EW.ed===e){EW.ed=null;render();store(true);return;}
       PK.ed=null;render();store(true);
       pickDoms();pickList(true);
     }
@@ -12629,6 +13066,7 @@ opt('nx:act','Switch on tap','calls the toggle of an entity')+
       return (GL.target&&IM(GL.target).p)||'';
     }
     function galOpen(tg){
+      if(exa){pickClose();exCopy().then(ok=>{if(ok)galOpen(tg);});return;}
       pickClose();
       const s=sel>=0&&S.objects[sel];
       GL.target=tg||(s&&!isEl(s)?s:null);
